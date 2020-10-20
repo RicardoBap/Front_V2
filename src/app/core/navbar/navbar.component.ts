@@ -29,13 +29,14 @@ export class NavbarComponent implements OnInit {
   }
 
   criarNovoAccessToken() {
+    console.log('Obtendo novo acess token atraves do botao')
     this.auth.obterNovoAccessToken()
   }
 
   logout() {
     this.logoutService.logout()
       .then(() => {
-        this.router.navigate([ '/login' ])
+        this.router.navigate([ '/home' ])
       })
       .catch(erro => this.errorHandler.handle(erro))
   }

@@ -30,7 +30,6 @@ export class LoginFormComponent implements OnInit {
       this.router.navigate([ '/dashboard'])
     })
     .catch(erro => {
-      //console.log(erro)
       this.errorHandler.handle(erro)
     })
   }

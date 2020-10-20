@@ -5,7 +5,7 @@ import { MoneyHttp } from './../seguranca/money-http';
 import { Usuario, Permissao } from './../core/usuario.model';
 
 //import { environment } from './../../environments/environment.prod';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment.prod'; //<--- assim que estava
 
 export class UsuarioFiltro {
   nome: string
@@ -53,25 +53,13 @@ export class UsuarioService {
       })
     }
 
-    /*
-  public getUsuarios(): Promise<Array<Usuario>> {
-    return this.http.get<Usuario>(`${this.usuariosUrl}`)
-      .toPromise()
-      .then((resposta: any) => resposta )
-  } */
-
+  
   public getPermissoes(): Promise<Array<Permissao>> {
     //console.log(Permissao)
     return this.http.get<Permissao>(`${this.permissoesUrl}`)
       .toPromise()
       .then((resposta: any) => resposta )
-  }
-
-  /*public listarTodas(): Promise<Array<Permissao>> {
-    return this.http.get<Permissao>(`${this.permissoesUrl}`)
-      .toPromise()
-      .then((resposta: any) => resposta )
-  }*/
+  } 
 
   public adicionar(usuario: Usuario): Promise<Usuario> {
     const headers = new HttpHeaders()

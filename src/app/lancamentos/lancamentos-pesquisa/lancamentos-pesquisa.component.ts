@@ -47,7 +47,6 @@ export class LancamentosPesquisaComponent implements OnInit {
   aoMudarPagina(event: LazyLoadEvent) {
     const pagina = event.first / event.rows
     this.pesquisar(pagina)
-    //console.log(event)
   }
 
   confirmarExclusao(lancamento: any) {
@@ -62,7 +61,6 @@ export class LancamentosPesquisaComponent implements OnInit {
   excluir(lancamento: any) {
     this.lancamentoService.excluir(lancamento.codigo)
       .then(() => {
-        //console.log('Excluido')
         if (this.grid.first === 0 ) {
           this.pesquisar()
         } else {

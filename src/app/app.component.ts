@@ -15,8 +15,4 @@ export class AppComponent {
     return this.router.url !== '/login'
   }
 
-  //exibindoFooter() {
-  //  return this.router.url !== '/login'
-  //}
-
 }

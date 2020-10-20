@@ -4,7 +4,7 @@ import { MoneyHttp } from './money-http';
 import { AuthService } from './auth.service';
 
 //import { environment } from './../../environments/environment.prod';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment.prod';  //<--- assim que estava
 
 @Injectable({
   providedIn: 'root'

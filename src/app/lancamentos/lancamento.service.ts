@@ -7,7 +7,7 @@ import * as moment from 'moment'
 import { MoneyHttp } from '../seguranca/money-http';
 
 //import { environment } from './../../environments/environment.prod';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment.prod'; //<--------Assin que estava
 
 export class LancamentoFiltro {
   descricao: string
