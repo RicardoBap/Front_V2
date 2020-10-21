@@ -74,7 +74,7 @@ export class AuthService {
 
     const body = 'grant_type=refresh_token'
 
-    return this.http.post<any>(this.oauthTokenUrl, body, { headers, withCredentials: true })
+    return this.http.post<any>(this.oauthTokenUrl, body, { headers, withCredentials: true }) 
       .toPromise()
       .then(response => {
         this.armazenarToken(response.access_token)
