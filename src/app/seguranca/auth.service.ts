@@ -34,8 +34,27 @@ export class AuthService {
       .then(response => {
         //console.log(response)
         this.armazenarToken(response.access_token)
-      })
-      .catch(response => {
+      })      
+      /*.catch(response => {
+        //console.log(response)
+        if (response.status === 400 || response.error === 'invalid_grant') {
+          const responseJson = response
+          return Promise.reject('Usuario ou senha inválidos')
+        }*/
+        .catch(response => {
+          console.log(response)
+          if (response.status === 400 ) {
+            if (response.error.error === 'invalid_grant') {
+            //const responseJson = response
+            return Promise.reject('Usuario ou senha inválidos')
+          }
+        }
+        return Promise.reject(response)
+      })    
+  }
+
+  /*
+   .catch(response => {
         //console.log(response)
         if (response.status === 400 || response.error === 'invalid_grant') {
           const responseJson = response
@@ -43,8 +62,17 @@ export class AuthService {
         }
         return Promise.reject(response)
       })
-  }
 
+      .catch(response => {
+        console.log(response)
+        if (response.status === 400 ) {
+          if (response.error.error === 'invalid_grant') {
+          const responseJson = response
+          return Promise.reject('Usuario ou senha inválidos')
+        }
+      }
+  */
+ 
   limparAccessToken() {
     localStorage.removeItem('token')
     this.jwtPayLoad = null
@@ -77,7 +105,8 @@ export class AuthService {
     return this.http.post<any>(this.oauthTokenUrl, body, { headers, withCredentials: true }) 
       .toPromise()
       .then(response => {
-        this.armazenarToken(response.access_token)
+        console.log('Verificando', response)
+        this.armazenarToken(response.access_token) //<------------Acho que é aqui!
 
         console.log('Novo access token criado.')
         return Promise.resolve(null)
