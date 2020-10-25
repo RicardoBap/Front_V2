@@ -38,7 +38,7 @@ export class PainelComponent  {
   }
 
   public verificarResposta(painelForm: NgForm): void {
-    console.log(painelForm)
+    //console.log(painelForm)
     if (this.resposta === true) {
       this.positivo = ++this.positivo;
       //console.log('positivo' + this.positivo);

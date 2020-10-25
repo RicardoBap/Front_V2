@@ -49,7 +49,7 @@ export class MoneyHttp extends HttpClient {
 
     private fazerRequisicao<T>(fn: Function): Observable<T> {
       if (this.auth.isAccessTokenInvalido()) {
-        console.log('Requisição http com access token invalido! Obtendo novo token AQUI')
+        //console.log('Requisição http com access token invalido! Obtendo novo token AQUI')
 
         const chamadaNovoAccessToken = this.auth.obterNovoAccessToken()
         .then(() => {

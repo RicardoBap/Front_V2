@@ -44,8 +44,7 @@ export class PessoasPesquisaComponent implements OnInit {
 
   aoMudarPagina(event: LazyLoadEvent) {
     const pagina = event.first / event.rows
-    this.pesquisar(pagina)
-    //console.log(event)
+    this.pesquisar(pagina)   
   }
 
   confirmarExclusao(pessoa: any) {

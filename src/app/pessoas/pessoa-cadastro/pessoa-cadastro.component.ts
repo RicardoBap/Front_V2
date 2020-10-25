@@ -47,8 +47,7 @@ export class PessoaCadastroComponent implements OnInit {
     return Boolean(this.pessoa.codigo)
   }
 
-  adicionarPessoa(pessoaForm: NgForm) {
-    //console.log(pessoaForm)
+  adicionarPessoa(pessoaForm: NgForm) {   
     this.pessoaService.adicionar(this.pessoa)
     .then(() => {
       this.messageService.add(
