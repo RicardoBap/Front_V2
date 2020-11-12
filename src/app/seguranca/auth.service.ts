@@ -80,6 +80,7 @@ export class AuthService {
     const headers = new HttpHeaders()
       .append('Content-Type', 'application/x-www-form-urlencoded')
       .append('Authorization', 'Basic YW5ndWxhcjpAbmd1bEByMA==')
+      .append('Authorization', 'Bearer')
 
     const body = 'grant_type=refresh_token'
 
