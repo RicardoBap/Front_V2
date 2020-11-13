@@ -72,7 +72,7 @@ registerLocaleData(localePt)
     DashboardService,
     RelatorioService,
 
-    { provide: LOCALE_ID, useValue: 'pt' }
+    { provide: LOCALE_ID, useValue: 'pt-BR' }
   ],
 
 })

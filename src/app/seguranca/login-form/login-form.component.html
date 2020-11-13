@@ -3,30 +3,39 @@
   <form autocomplete="off" #loginForm="ngForm">
 
     <div class="p-col-12">
-      <div class="p-grid p-justify-center">
-        <div class="ui-g">
-
+      <div class="p-grid  p-justify-center"> 
+        <div class="p-col-12  p-sm-6  p-lg-4">
+         
           <div class="p-col-12">
             <h1>Login</h1>
           </div>
-
-          <div class="p-col-12 ui-fluid">
-            <input class="form-control" type="text" pInputText placeholder="E-mail" required
-                  name="usuario" ngModel #usuario  />
+         
+          <div class="p-col-12  ui-fluid">            
+            <input class="form-control" type="text" pInputText placeholder="Seu e-mail" required
+                  name="usuario" ngModel #usuario >                    
           </div>
 
-          <div class="p-col-12 ui-fluid">
-            <input type="password" pPassword  class="form-control"  placeholder="Senha" required
+          <!--div class="p-col-12  ui-fluid">
+            <div class="ui-inputgroup">
+              <input class="form-control" type="text" pInputText placeholder="Seu e-mail" required
+                name="usuario" ngModel #usuario >                  
+                <span class="ui-inputgroup-addon"><i class="pi  pi-envelope" style="line-height: 1.25;"></i></span>      
+            </div>
+          </div-->
+          
+          <div class="p-col-12  ui-fluid">
+            <input type="password" pPassword  class="form-control"  placeholder="Sua senha" required
                   name="senha" ngModel #senha  [feedback]="false"/>
           </div>
 
-          <div class="p-col-12 ui-fluid">
+          <div class="p-col-12  ui-fluid">
             <button pButton type="submit" label="Login" [disabled]="!loginForm.valid"
                     (click)="login(usuario.value, senha.value); senha.value = '' " >
             </button>
-          </div>
+          </div>  
 
-        </div>
+        </div> 
+
       </div>
     </div>
   </form>
