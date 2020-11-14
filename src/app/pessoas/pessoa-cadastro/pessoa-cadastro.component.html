@@ -68,7 +68,7 @@
         <app-message [control]="encargo" error="required" text="Informe o encargo"></app-message>
       </div>
 
-      <div class="p-col-12">
+      <div class="p-col-12" style="margin-bottom: 100px">
         <button pButton type="submit" label="Salvar" style="margin-right: 10px;" [disabled]="!pessoaForm.valid"></button>
         <button pButton type="button" label="Novo" class="ui-button-secondary" (click)="novo(pessoaForm)"></button>
         <a routerLink="/pessoas" style="margin-left: 10px;">Voltar para a pesquisa</a>

@@ -28,7 +28,7 @@
 <!-- ***********************<><>><><><><><>******************************* -->
   <div class="ui-g">
 
-    <div class="p-col-12">
+    <div class="p-col-12" style="margin-bottom: 100px">
       <p-table [value]="categorias" [responsive]="true" [paginator]="true" [rows]="5" [showCurrentPageReport]="true"
         currentPageReportTemplate="Mostrando {first} a {last} total de {totalRecords} categorias">
           <ng-template pTemplate="header" >
@@ -50,7 +50,7 @@
               <button pButton icon="pi pi-trash"
                 pTooltip="Excluir" tooltipPosition="top"
                 [disabled]="!auth.temPermissao('ROLE_REMOVER_CATEGORIA')"
-                (click)="confirmarExclusao(categoria)" >
+                (click)="confirmarExclusao(categoria)"  >
               </button>
             </td>
           </tr>

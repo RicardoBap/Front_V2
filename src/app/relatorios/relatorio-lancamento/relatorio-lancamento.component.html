@@ -5,7 +5,7 @@
       <h1>Relatórios</h1>
     </div>
 
-  <div class="p-col-12 p-md-6">
+  <div class="p-col-12 p-md-6"  >
     <p-panel header="Relatórios de lançamentos diários">
 
     <form #relatorioForm1=ngForm (ngSubmit)="gerarRelatorioDiario()">
@@ -27,7 +27,7 @@
     </p-panel>
   </div>
 <!-- <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> -->
-<div class="p-col-12 p-md-6">
+<div class="p-col-12 p-md-6" style="margin-bottom: 100px">
   <div class="ui-g">
     <p-panel header="Relatórios de lançamentos por pessoa">
 
@@ -37,7 +37,7 @@
 
       <form #relatorioForm2=ngForm (ngSubmit)="gerarRelatorioPorPessoa()">
 
-      <div class="p-col-12">
+      <div class="p-col-12" >
         <label>Vencimento</label>
         <input type="date" pInputText name="periodoInicio" style="width: 160px" required
               name="periodoInicio" [(ngModel)]="periodoInicio">
@@ -46,7 +46,7 @@
               name="periodoFim" [(ngModel)]="periodoFim">
       </div>
 
-      <div class="p-col-12">
+      <div class="p-col-12" >
         <button pButton type="submit" label="Gerar" [disabled]="!relatorioForm2.valid"></button>
       </div>
 
