@@ -21,7 +21,7 @@ import { Component, OnInit } from '@angular/core';
       </div>
 
       <div class="p-grid  p-justify-center">
-        <a pButton routerLink="/dashboard" label="Voltar para dashboard"> </a>
+        <a pButton routerLink="/lancamentos" label="Voltar para pesquisa de lançamentos"> </a>
       </div>     
       
     </div> 

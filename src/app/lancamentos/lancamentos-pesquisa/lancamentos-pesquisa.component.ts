@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
-import {MessageService} from 'primeng/api';
+import {MessageService, SortEvent} from 'primeng/api';
 
 import { LancamentoService, LancamentoFiltro } from './../lancamento.service';
 import { LazyLoadEvent, ConfirmationService } from 'primeng/api';
@@ -30,8 +30,8 @@ export class LancamentosPesquisaComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.title.setTitle('Pesquisa de lançamentos')
-   }
+    this.title.setTitle('Pesquisa de lançamentos')    
+   }  
 
   pesquisar(pagina = 0) {
     this.filtro.pagina = pagina
@@ -39,10 +39,10 @@ export class LancamentosPesquisaComponent implements OnInit {
     this.lancamentoService.pesquisar( this.filtro )
     .then(resultado => {
       this.totalRegistros = resultado.total
-      this.lancamentos = resultado.lancamentos
+      this.lancamentos = resultado.lancamentos     
     })
     .catch(erro => this.errorHandler.handle(erro))
-  }
+  } 
 
   aoMudarPagina(event: LazyLoadEvent) {
     const pagina = event.first / event.rows
