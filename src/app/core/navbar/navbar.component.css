@@ -75,6 +75,11 @@
   z-index: 9998
 }
 
+.p-button {
+  background-color: #006ACB;
+  border: none;
+}
+
 .nav {
   display: inline-flex;
   flex-wrap: wrap;

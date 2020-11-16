@@ -7,36 +7,36 @@
         <h2>Atualização de usuários</h2>
       </div>
 
-      <div class="ui-g">
+      <div class="p-grid">
         <div class="p-col-12 p-sm-8">
           <!--div class="p-grid"-->
           <div class="p-grid">
 
-            <div class="p-col-12 ui-fluid"  >
+            <div class="p-col-12  p-fluid"  >
               <label style="display: block">Código</label>
               <input class="form-control" type="text" pInputText style="width: 160px;"
                      name="codigo" ngModel #codigo="ngModel" [(ngModel)]="usuario.codigo" />
             </div>
 
-            <div class="p-col-12 p-md-6 ui-fluid">
+            <div class="p-col-12  p-md-6  p-fluid">
               <label>nome</label>
               <input class="form-control" type="text" pInputText
                      name="nome" ngModel #nome="ngModel" [(ngModel)]="usuario.nome" />
             </div>
 
-            <div class="p-col-12 p-md-6 ui-fluid">
+            <div class="p-col-12  p-md-6  p-fluid">
               <label>E-mail</label>
               <input class="form-control" type="text" pInputText
                      name="email" ngModel #email="ngModel" [(ngModel)]="usuario.email" />
             </div>
 
-            <div class="p-col-6 ui-fluid">
+            <div class="p-col-6  p-fluid">
               <label>Senha do Usuário</label>
               <input class="form-control" type="text" pInputText
               name="senhaUsuario" ngModel #senhaUsuario="ngModel" [(ngModel)]="usuario.senhaUsuario" />
             </div>
 
-            <div class="p-col-12 ui-fluid">
+            <div class="p-col-12  p-fluid">
               <label>Nova senha</label>
               <input class="form-control" type="text" pInputText
                      name="senha" ngModel #senha="ngModel" [(ngModel)]="usuario.senha" />
@@ -44,7 +44,7 @@
           </div>
         </div>
 
-        <div class="p-col-12 p-sm-4 ui-fluid">
+        <div class="p-col-12  p-sm-4  p-fluid">
           <label>Permissões</label>
           <p-listbox  [showToggleAll]="true" [options]="permissoes"
                       name="permissao" ngModel #permissao="ngModel" [(ngModel)]="usuario.permissoes"

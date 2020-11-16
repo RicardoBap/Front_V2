@@ -14,34 +14,33 @@
 
             <h3>Por favor, faça seu login.</h3>
 
-            <!--div class="p-col-12  ui-fluid">            
+            <!--div class="p-col-12  p-fluid">            
               <input class="form-control" type="text" pInputText placeholder="Seu e-mail" required
                     name="usuario" ngModel #usuario >                    
             </div>
 
-            <div class="p-col-12  ui-fluid">
+            <div class="p-col-12  p-fluid">
               <input type="password" pPassword  class="form-control"  placeholder="Sua senha" required
                     name="senha" ngModel #senha  [feedback]="false"/>
             </div-->
 
-            <div class="p-col-12  ui-fluid">
-              <div class="ui-inputgroup">
+            <div class="p-col-12  p-fluid">
+              <div class="p-inputgroup">
                 <input class="form-control" type="text" pInputText placeholder="Seu e-mail" required
                   name="usuario" ngModel #usuario >                  
-                  <span class="ui-inputgroup-addon"><i class="pi  pi-envelope" style="line-height: 1.25;"></i></span>      
-              </div>
-            </div>
-
-            <div class="p-col-12  ui-fluid">
-              <div class="ui-inputgroup">
-                <input type="password" pPassword  class="form-control"  placeholder="Sua senha" required
-                    name="senha" ngModel #senha  [feedback]="false"/>                 
-                  <span class="ui-inputgroup-addon"><i class="pi  pi-lock" style="line-height: 1.25;"></i></span>      
+                  <span class="p-inputgroup-addon"><i class="pi  pi-envelope" style="line-height: 1.25;"></i></span>      
               </div>
             </div>           
-           
 
-            <div class="p-col-12  ui-fluid">
+            <div class="p-col-12  p-fluid">
+              <div class="p-inputgroup">
+                <input type="password" pPassword  class="form-control"  placeholder="Sua senha" required
+                    name="senha" ngModel #senha  [feedback]="false"/>                 
+                  <span class="p-inputgroup-addon"><i class="pi  pi-lock" style="line-height: 1.25;"></i></span>      
+              </div>
+            </div>           
+
+            <div class="p-col-12  p-fluid">
               <button pButton type="submit" label="Entrar" [disabled]="!loginForm.valid"
                       (click)="login(usuario.value, senha.value); senha.value = '' " >
               </button>
@@ -53,5 +52,6 @@
 
       </div>
     </div>
+
   </form>
 </div>

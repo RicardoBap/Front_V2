@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="ui-g">
+  <!--div class="ui-g"-->
 
     <div class="p-col-12">
       <div *ngIf="emAndamento; else encerramento">
@@ -15,7 +15,7 @@
 
             <h1>Você respondeu <strong>{{ tipoEncerramento }} vezes</strong> SIM</h1>
 
-            <div class="p-col-10 painel">
+            <div class="p-col-10  painel">
               <h3>Resposta</h3>
               <p>Respondeu <strong>SIM</strong> quatro vezes ou mais? Em caso positivo,
                 é provável que você tenha problemas com o álcool. Porque dizemos isto?
@@ -42,20 +42,24 @@
       </ng-template>
 
       <ng-template #menosDeQuatro>
+       <div class="p-col-12">
         <div class="p-grid p-justify-center">
+         
           <h1>Você respondeu <strong>{{ tipoEncerramento - 12}} vezes</strong> NÃO</h1>
-          <div class="p-col-10 painel">
+          <div class="p-col-12  painel">
             <h3>Resposta</h3>
             <p>Volte para Home ou aperte o botão!</p>
             <a type="button" pButton class="ui-button-danger"  href="https://www.google.com.br/" label="Clique aqui" ></a>
-          </div>
+          </div>          
         </div>
+      </div>
+        
       </ng-template>
 
     </div>
 
   </div>
-</div>
+<!--/div-->  <!--ui-g -->
 
 <app-rodape></app-rodape>
 

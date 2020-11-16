@@ -1,7 +1,8 @@
 <div class="container">
-
+  <div class="p-col-12">
   <form autocomplete="off" #lancamentoForm="ngForm" (ngSubmit)="salvar(lancamentoForm)">
-    <div class="ui-g">
+
+    <div class="p-grid">
       <div class="p-col-12">
         <h1>{{ atualizando ? 'Atualização de' : 'Novo' }} lançamento</h1>
       </div>
@@ -12,7 +13,7 @@
         </p-selectButton>
       </div>
 
-      <div class="p-col-12  p-sm-3 ui-fluid">
+      <div class="p-col-12  p-sm-3 p-fluid">
         <label>Vencimento</label>
         <input class="form-control" type="date" pInputText
                       name="dataVencimento" ngModel  #dataVencimento="ngModel" required
@@ -20,14 +21,14 @@
         <app-message [control]="dataVencimento" error="required" text="Informe a data de vencimento"></app-message>
       </div>
 
-      <div class="p-col-12  p-sm-3 ui-fluid">
+      <div class="p-col-12  p-sm-3 p-fluid">
         <label>{{ tipo.value === 'RECEITA' ? 'Entrada' : 'Saída' }}</label>
         <input class="form-control" type="date" pInputText
                 name="dataPagamento" ngModel #dataPagamento="ngModel"
                 [(ngModel)]="lancamento.dataPagamento" />
       </div>
 
-      <div class="p-col-12 p-sm-9 ui-fluid">
+      <div class="p-col-12 p-sm-9 p-fluid">
         <label>Descrição</label>  <!-- {{ descricao.errors | json }} -->
         <input class="form-control" type="text" pInputText
                name="descricao" ngModel #descricao="ngModel" required minlength="5"
@@ -38,7 +39,7 @@
         </app-message>       
       </div>
 
-      <div class="p-col-12 p-sm-3 ui-fluid"> 
+      <div class="p-col-12 p-sm-3 p-fluid"> 
         <label>Valor</label>
         <input class="form-control" type="text" pInputText placeholder="R$ 0,00"
                name="valor" ngModel #valor="ngModel" required
@@ -46,7 +47,7 @@
                currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"/>
       </div>
 
-      <div class="p-col-12 p-md-6 ui-fluid">
+      <div class="p-col-12 p-md-6 p-fluid">
         <label>Categoria</label>
         <p-dropdown class="form-control" [options]="categorias" placeholder="Selecione"
                     name="categoria" ngModel #categoria="ngModel" required
@@ -54,7 +55,7 @@
         </p-dropdown>
       </div>
 
-      <div class="p-col-12 p-md-6 ui-fluid">
+      <div class="p-col-12 p-md-6 p-fluid">
         <label>Pessoa</label>
         <p-dropdown class="form-control" type="text" [options]="pessoas" placeholder="Selecione" filter="true"
                     name="pessoa" ngModel #pessoa="ngModel" required
@@ -62,7 +63,7 @@
         </p-dropdown>
       </div>
 
-      <div class="p-col-12 ui-fluid">
+      <div class="p-col-12 p-fluid">
         <label>Observação</label>
         <textarea class="form-control" [rows]="3"  pInputTextarea name="observacao" ngModel #observacao="ngModel"
                   [(ngModel)]="lancamento.observacao" >
@@ -77,4 +78,6 @@
 
     </div>
   </form>
+
+</div>
 </div>

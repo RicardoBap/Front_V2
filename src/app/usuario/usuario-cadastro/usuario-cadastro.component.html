@@ -4,13 +4,13 @@
     <form [formGroup]="formulario" novalidate (ngSubmit)="adicionarUsuario()" >
 
       <div class="p-col-12">
-        <div class="p-grid p-justify-center">
+        <div class="p-grid  p-justify-center">
 
-          <div class="p-col-12 p-sm-8">
+          <div class="p-col-12  p-sm-8">
             <h1>Cadastro de usuários</h1>
           </div>
 
-          <div class="p-col-12 p-sm-8 ui-fluid">
+          <div class="p-col-12  p-sm-8  p-fluid">
             <label>Nome</label>
             <input class="form-control" type="text" pInputText formControlName="nome" />
             <small *ngIf="formulario.get('nome').valid && formulario.get('nome').touched"
@@ -19,7 +19,7 @@
                   style="font-weight: bold;" class="form-text text-danger">Nome inválido</small >
           </div>
 
-          <div class="p-col-12 p-sm-8 ui-fluid">
+          <div class="p-col-12  p-sm-8  p-fluid">
             <label>E-mail</label>
             <input class="form-control" type="text" pInputText formControlName="email" />
             <small *ngIf="formulario.get('email').valid && formulario.get('email').touched"
@@ -28,7 +28,7 @@
                   style="font-weight: bold;" class="form-text text-danger">E-mail inválido</small >
           </div>
 
-          <div class="p-col-12 p-sm-8 ui-fluid">
+          <div class="p-col-12  p-sm-8  p-fluid">
             <label>Senha</label>
             <input class="form-control" type="password" pPassword [showPassword]="false" [feedback]="false" pInputText
                   formControlName="senha" />
@@ -38,7 +38,7 @@
                   style="font-weight: bold;" class="form-text text-danger">Mínimo de 6 letras ou números</small>
           </div>
 
-          <div class="p-col-12 p-sm-8 ui-fluid">
+          <div class="p-col-12  p-sm-8  p-fluid">
             <label>Confirme a sua senha</label>
             <input class="form-control" type="password" pPassword [showPassword]="false" [feedback]="false" pInputText
                        formControlName="confirmarSenha" />
@@ -59,7 +59,7 @@
               style="margin-right: 10px;">{{ c.codigo }}</span></p>
           </div-->
 
-          <div class="p-col-12 p-sm-8" style="margin-bottom: 100px">
+          <div class="p-col-12  p-sm-8" style="margin-bottom: 100px">
             <button pButton type="submit" label="adicionar" [disabled]="!formulario.valid" ></button>
             <!-- a routerLink="/usuarios" style="margin-left: 10px;">Pesquisar usuários</a -->
           </div>
