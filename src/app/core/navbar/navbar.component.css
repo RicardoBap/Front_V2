@@ -80,8 +80,8 @@
   border: none;
 }
 
-.pi {
-  font-size: 0.5em;
+pi {
+  border: none;
 }
 
 .nav {
@@ -109,6 +109,10 @@
   border-bottom: 3px solid #FFF;
 }
 
+/* ########## tira a linha do link ############*/
+.nav-item a {
+  text-decoration: none;
+}
 
 /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
 .dropdown {
@@ -128,7 +132,6 @@
   font-family: inherit; /* Important for vertical align on mobile phones */
   margin: 0; /* Important for vertical align on mobile phones */
 }
-
 
 /* Add a red background color to navbar links on hover */
 .navbar a:hover, .dropdown:hover .dropbtn {

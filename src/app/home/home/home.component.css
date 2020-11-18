@@ -142,7 +142,14 @@ h3 {
     margin-top: 0;
     margin-bottom: 10px;
 }
+/*############################ */
+.section a {
+  text-decoration: none;
+}
 
+.section-revista a {
+  text-decoration: none;
+}
 /* ------------------ REVISTA --------- */
 .section-revista {
   border: 1px solid #CCC;

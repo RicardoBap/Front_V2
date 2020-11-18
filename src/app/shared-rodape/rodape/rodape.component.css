@@ -43,6 +43,11 @@ a {
   color: #FFF;
 }
 
+/* ###### tira a linha do link ######### */
+.item a {
+  text-decoration: none;
+}
+
 a:hover {
   color: #C0BBB7;
   border-bottom: 3px solid #C0BBB7;

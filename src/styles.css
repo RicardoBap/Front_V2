@@ -35,21 +35,15 @@ label {
   width: 120px;
 }
 
-/* tira sublinhado das tags a */
-a:-webkit-any-link {
-  /* color: #FFF; */
-  cursor: pointer;
-  text-decoration: none;
-  text-decoration-line: none;
-  text-decoration-style: initial !important;
-  text-decoration-color: initial;
+.p-sidebar-right {
+  width: 13rem !important;
 }
 
-.p-sidebar-right {
-  -ms-transform: translateX(100%);
-  height: 100%;
-  right: 0;
-  top: 0;
-  transform: translateX(100%);
-  width: 13rem !important;
+/* Tira o sublinhado da ancora */
+a.p-button {
+  text-decoration: none;
+} 
+
+a {
+  text-decoration: none;
 }

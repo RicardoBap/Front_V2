@@ -42,7 +42,7 @@
     "ngx-owl-carousel-o": "^4.0.0",
     "primeflex": "^2.0.0",
     "primeicons": "^4.0.0-rc.2",
-    "primeng": "^10.0.3",
+    "primeng": "^11.0.0-rc.1",
     "protractor": "~7.0.0",
     "rxjs": "~6.5.4",
     "rxjs-compat": "^6.6.3",

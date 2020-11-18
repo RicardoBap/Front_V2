@@ -14,23 +14,23 @@
       </div>
 
       <div class="p-col-12  p-sm-3 p-fluid">
-        <label>Vencimento</label>
-        <input class="form-control" type="date" pInputText
+        <label for="dataVencimento">Vencimento</label>
+        <input id="dataVencimento" class="form-control" type="date" pInputText
                       name="dataVencimento" ngModel  #dataVencimento="ngModel" required
                       [(ngModel)]="lancamento.dataVencimento" />
         <app-message [control]="dataVencimento" error="required" text="Informe a data de vencimento"></app-message>
       </div>
 
       <div class="p-col-12  p-sm-3 p-fluid">
-        <label>{{ tipo.value === 'RECEITA' ? 'Entrada' : 'Saída' }}</label>
-        <input class="form-control" type="date" pInputText
+        <label for="dataPagamento">{{ tipo.value === 'RECEITA' ? 'Entrada' : 'Saída' }}</label>
+        <input id="dataPagamento" class="form-control" type="date" pInputText
                 name="dataPagamento" ngModel #dataPagamento="ngModel"
                 [(ngModel)]="lancamento.dataPagamento" />
       </div>
 
       <div class="p-col-12 p-sm-9 p-fluid">
-        <label>Descrição</label>  <!-- {{ descricao.errors | json }} -->
-        <input class="form-control" type="text" pInputText
+        <label for="descricao">Descrição</label>  <!-- {{ descricao.errors | json }} -->
+        <input id="descricao" class="form-control" type="text" pInputText
                name="descricao" ngModel #descricao="ngModel" required minlength="5"
                [(ngModel)]="lancamento.descricao" />
         <app-message [control]="descricao" error="required" text="Informe uma descrição"></app-message>
@@ -40,8 +40,8 @@
       </div>
 
       <div class="p-col-12 p-sm-3 p-fluid"> 
-        <label>Valor</label>
-        <input class="form-control" type="text" pInputText placeholder="R$ 0,00"
+        <label for="valor">Valor</label>
+        <input id="valor" class="form-control" type="text" pInputText placeholder="R$ 0,00"
                name="valor" ngModel #valor="ngModel" required
                [(ngModel)]="lancamento.valor"
                currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"/>
@@ -64,15 +64,15 @@
       </div>
 
       <div class="p-col-12 p-fluid">
-        <label>Observação</label>
-        <textarea class="form-control" [rows]="3"  pInputTextarea name="observacao" ngModel #observacao="ngModel"
+        <label for="observacao">Observação</label>
+        <textarea id="observacao" class="form-control" [rows]="3"  pInputTextarea name="observacao" ngModel #observacao="ngModel"
                   [(ngModel)]="lancamento.observacao" >
         </textarea>
       </div>
 
       <div class="p-col-12" style="margin-bottom: 100px" >
         <button pButton type="submit" label="Salvar" style="margin-right: 10px;" [disabled]="!lancamentoForm.valid" ></button>
-        <button pButton type="button" label="Novo" class="ui-button-secondary" (click)="novo(lancamentoForm)"></button>
+        <button pButton type="button" label="Novo" class="p-button-secondary" (click)="novo(lancamentoForm)"></button>
         <a routerLink="/lancamentos" style="margin-left: 10px;">Voltar para pesquisa</a>
       </div>
 
