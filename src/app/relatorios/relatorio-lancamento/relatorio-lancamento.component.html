@@ -1,63 +1,55 @@
 <div class="container">
-<div class="p-col-12">
+  <div class="p-col-12">
 
-  <div class="p-grid">
-
-    <div class="p-col-12">
-      <h1>Relatórios</h1>
-    </div>
-
-  <div class="p-col-12 p-md-6"  >
-    <p-panel header="Relatórios de lançamentos diários">
-
-    <form #relatorioForm1=ngForm (ngSubmit)="gerarRelatorioDiario()">
-
-      <div class="p-col-12 ui-fluid">
-        <label>Vencimento</label>
-        <input type="date" pInputText name="periodoInicio" style="width: 170px" required
-              name="periodoInicio" [(ngModel)]="periodoInicio">
-        <label>até</label>
-        <input type="date" pInputText name="periodoFim" style="width: 170px" required
-              name="periodoFim" [(ngModel)]="periodoFim">
-      </div>
+    <div class="p-grid">
 
       <div class="p-col-12">
-        <button pButton type="submit" label="Gerar" [disabled]="!relatorioForm1.valid"></button>
+        <h1>Relatórios</h1>
       </div>
 
-    </form>
-    </p-panel>
-  </div>
+      <div class="p-col-12 p-md-6"  >
+        <p-panel header="Relatórios de lançamentos diários">
+
+        <form #relatorioForm1=ngForm (ngSubmit)="gerarRelatorioDiario()">
+
+          <div class="p-col-12 ui-fluid">
+            <label>Vencimento</label>
+            <input type="date" pInputText name="periodoInicio" style="width: 170px" required
+                  name="periodoInicio" [(ngModel)]="periodoInicio">
+            <label>até</label>
+            <input type="date" pInputText name="periodoFim" style="width: 170px" required
+                  name="periodoFim" [(ngModel)]="periodoFim">
+          </div>
+
+          <div class="p-col-12">
+            <button pButton type="submit" label="Gerar" [disabled]="!relatorioForm1.valid"></button>
+          </div>
+
+        </form>
+        </p-panel>
+      </div>
 <!-- <><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><> -->
-<div class="p-col-12 p-md-6" style="margin-bottom: 100px">
-  <div class="ui-g">
-    <p-panel header="Relatórios de lançamentos por pessoa">
+      <div class="p-col-12 p-md-6" style="margin-bottom: 100px">
+       
+        <p-panel header="Relatórios de lançamentos por pessoa">
 
-    <!--div class="p-col-12">
-      <h1>Relatórios de lançamentos por pessoa</h1>
-    </div-->
+          <form #relatorioForm2=ngForm (ngSubmit)="gerarRelatorioPorPessoa()">
+            <div class="p-col-12" >
+              <label>Vencimento</label>
+              <input type="date" pInputText name="periodoInicio" style="width: 170px" required
+                    name="periodoInicio" [(ngModel)]="periodoInicio">
+              <label>até</label>
+              <input type="date" pInputText name="periodoFim" style="width: 170px" required
+                    name="periodoFim" [(ngModel)]="periodoFim">
+            </div>
 
-      <form #relatorioForm2=ngForm (ngSubmit)="gerarRelatorioPorPessoa()">
-
-      <div class="p-col-12" >
-        <label>Vencimento</label>
-        <input type="date" pInputText name="periodoInicio" style="width: 170px" required
-              name="periodoInicio" [(ngModel)]="periodoInicio">
-        <label>até</label>
-        <input type="date" pInputText name="periodoFim" style="width: 170px" required
-              name="periodoFim" [(ngModel)]="periodoFim">
+            <div class="p-col-12" >
+              <button pButton type="submit" label="Gerar" [disabled]="!relatorioForm2.valid"></button>
+            </div>
+          </form>
+        </p-panel>
       </div>
 
-      <div class="p-col-12" >
-        <button pButton type="submit" label="Gerar" [disabled]="!relatorioForm2.valid"></button>
-      </div>
-
-      </form>
-    </p-panel>
+    </div>
   </div>
-
-  </div>
-</div>
-
-</div>
 </div>

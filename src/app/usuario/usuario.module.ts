@@ -9,6 +9,8 @@ import { CardModule } from 'primeng/card';
 import { ListboxModule } from 'primeng/listbox';
 import { PasswordModule } from 'primeng/password';
 import { PickListModule } from 'primeng/picklist';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { CheckboxModule } from 'primeng/checkbox';
 
 import { UsuariosPesquisaComponent } from './usuarios-pesquisa/usuarios-pesquisa.component';
 import { UsuarioCadastroComponent } from './usuario-cadastro/usuario-cadastro.component';
@@ -34,6 +36,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     FormsModule,
     PickListModule,
+    InputSwitchModule,
+    CheckboxModule,
 
     UsuarioRoutingModule
   ]

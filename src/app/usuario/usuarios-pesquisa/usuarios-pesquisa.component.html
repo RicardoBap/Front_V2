@@ -17,7 +17,8 @@
     </div>
 
     <div class="p-col-12">
-      <p-table [value]="usuarios" [responsive]="true" #tabela
+      <p-table  styleClass="p-datatable-sm  p-datatable-striped  p-datatable-responsive"
+      [value]="usuarios" [responsive]="true" #tabela
       [lazy]="true" [totalRecords]="totalRegistros" (onLazyLoad)="aoMudarPagina($event)"
       [paginator]="true" [rows]="filtro.itensPorPagina" [showCurrentPageReport]="true"
       currentPageReportTemplate="Mostrando {first} até {last} de {totalRecords} registros" >

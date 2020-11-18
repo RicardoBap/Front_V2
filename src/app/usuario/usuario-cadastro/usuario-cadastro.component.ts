@@ -16,6 +16,7 @@ import { Validacoes } from './../validacoes';
 })
 export class UsuarioCadastroComponent implements OnInit {
 
+
   permissoes: Array<Permissao> = [
     { codigo: 3, descricao: 'ROLE_PESQUISAR_CATEGORIA'},
     { codigo: 6, descricao: 'ROLE_PESQUISAR_PESSOA'},
@@ -29,7 +30,7 @@ export class UsuarioCadastroComponent implements OnInit {
   criarFormularioDeUsuario() {
     this.formulario = this.fb.group({
       nome: ['', Validators.compose([ Validators.required, Validators.minLength(3), Validators.maxLength(50) ]) ],
-      email: ['', Validators.compose([ Validators.email, Validators.minLength(3), Validators.maxLength(50) ])],
+      email: ['', Validators.compose([ Validators.required, Validators.email, Validators.minLength(3), Validators.maxLength(50) ])],
       senha: ['', Validators.compose([ Validators.required, Validators.minLength(6), Validators.maxLength(12) ])],
       confirmarSenha: ['', Validators.compose([ Validators.required ])]
       //permissoes: []

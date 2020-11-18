@@ -16,7 +16,7 @@ const routes: Routes = [
     canActivate: [ AuthGuard ], data: { roles: [ 'ROLE_CADASTRAR_USUARIO' ] } },
 
   { path: ':codigo', component:  UsuarioAtualizarComponent,
-    canActivate: [ AuthGuard ], data: { roles: [ 'ROLE_CADASTRAR_USUARIO' ] } },
+    canActivate: [ AuthGuard ], data: { roles: [ 'ROLE_CADASTRAR_USUARIO' ] } }
 ];
 
 @NgModule({

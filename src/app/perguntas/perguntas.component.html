@@ -1,21 +1,21 @@
-<div class="container">
-  <!--div class="ui-g"-->
+<div class="container"> 
 
-    <div class="p-col-12">
-      <div *ngIf="emAndamento; else encerramento">
-        <app-painel (encerrar)="encerrar($event)"></app-painel>
-      </div>
+  <div class="p-col-12">
+    <div *ngIf="emAndamento; else encerramento">
+      <app-painel (encerrar)="encerrar($event)"></app-painel>
     </div>
+  </div>
 
-    <div class="p-col-12">
-      <ng-template #encerramento>
-        <div *ngIf="tipoEncerramento >= 4; else menosDeQuatro">
-
-         <div class="p-grid p-justify-center">
+  <div class="p-col-12">
+     
+    <ng-template #encerramento>
+      <div *ngIf="tipoEncerramento >= 4; else menosDeQuatro">
+        <div class="p-col-12">        
+          <div class="p-grid p-justify-center">
 
             <h1>Você respondeu <strong>{{ tipoEncerramento }} vezes</strong> SIM</h1>
 
-            <div class="p-col-10  painel">
+            <div class="p-col-12  p-md-6  p-lg-8  painel">
               <h3>Resposta</h3>
               <p>Respondeu <strong>SIM</strong> quatro vezes ou mais? Em caso positivo,
                 é provável que você tenha problemas com o álcool. Porque dizemos isto?
@@ -23,26 +23,28 @@
                 Elas descobriram a verdade a respeito delas - da maneira mais dura.
               </p>
               <p>Mas, novamente, somente você poderá dizer, com certeza, se A.A. é para você.
-                 Tente encarar este assunto com a mente aberta. Se a resposta for SIM,
-                 teremos satisfação em mosrar-lhe como conseguimos parar de beber.
-                 Entre em contato conosco.
+                Tente encarar este assunto com a mente aberta. Se a resposta for SIM,
+                teremos satisfação em mosrar-lhe como conseguimos parar de beber.
+                Entre em contato conosco.
               </p>
               <p>A.A. não promete resolver os problemas de sua vida, mas podemos mostrar-lhe
-                 como aprendemos a viver sem a bebida "um dia de cada vez" e como
-                 permanecemos afastados do "primeiro gole". Se não bebermos o primeiro não
-                 beberemos o décimo. E quando nos livramos do álcool, descobrimos que nossas
-                  vidas tornaram-se muito melhores.
+                como aprendemos a viver sem a bebida "um dia de cada vez" e como
+                permanecemos afastados do "primeiro gole". Se não bebermos o primeiro não
+                beberemos o décimo. E quando nos livramos do álcool, descobrimos que nossas
+                vidas tornaram-se muito melhores.
               </p>
 
               <a type="button" pButton (click)="reIniciar()" label="Responder novamente"></a>
             </div>
 
+          </div>
         </div>
       </div>
-      </ng-template>
+    </ng-template>
+    
 
-      <ng-template #menosDeQuatro>
-       <div class="p-col-12">
+    <ng-template #menosDeQuatro>
+      <div class="p-col-12">
         <div class="p-grid p-justify-center">
          
           <h1>Você respondeu <strong>{{ tipoEncerramento - 12}} vezes</strong> NÃO</h1>
@@ -54,12 +56,12 @@
         </div>
       </div>
         
-      </ng-template>
-
-    </div>
+    </ng-template>
 
   </div>
-<!--/div-->  <!--ui-g -->
+
+</div>
+
 
 <app-rodape></app-rodape>
 

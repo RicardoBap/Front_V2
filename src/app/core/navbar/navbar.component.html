@@ -18,9 +18,9 @@
   <div class="container">
     <ul class="nav">
       <li class="nav-item">
-        <a *ngIf="auth.temPermissao('ROLE_PESQUISAR_LANCAMENTO')"
-          type="button" (click)="display = true" pButton icon="pi pi-bars">
-        </a>
+        <button *ngIf="auth.temPermissao('ROLE_PESQUISAR_LANCAMENTO')"
+          type="button" (click)="display = true" pButton icon="pi pi-bars" class="pi  p-button-sm" >
+        </button>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" routerLink="/home">Home</a>

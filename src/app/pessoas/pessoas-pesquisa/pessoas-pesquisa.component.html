@@ -1,5 +1,4 @@
 <div class="container">
-  <div class="ui-g">
 
     <form autocomplete="off" (ngSubmit)="pesquisar()">
 
@@ -17,7 +16,8 @@
       </div>
 
       <div class="p-col-12">
-        <p-table [value]="pessoas" [responsive]="true" #tabela
+        <p-table  styleClass="p-datatable-sm  p-datatable-striped  p-datatable-responsive"
+          [value]="pessoas" [responsive]="true" #tabela
           [lazy]="true" [totalRecords]="totalRegistros" (onLazyLoad)="aoMudarPagina($event)"
           [paginator]="true" [rows]="filtro.itensPorPagina" [showCurrentPageReport]="true"
           currentPageReportTemplate="Mostrando {first} até {last} de {totalRecords} registros" >
@@ -63,5 +63,5 @@
       <button pButton routerLink="/pessoas/nova" label="Nova Pessoa" ></button>
     </div>
 
-  </div>
+
 </div>

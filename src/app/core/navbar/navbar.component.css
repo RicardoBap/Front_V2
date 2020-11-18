@@ -80,6 +80,10 @@
   border: none;
 }
 
+.pi {
+  font-size: 0.5em;
+}
+
 .nav {
   display: inline-flex;
   flex-wrap: wrap;
