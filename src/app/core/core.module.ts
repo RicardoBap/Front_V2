@@ -31,6 +31,7 @@ import { NaoAutorizadoComponent } from './nao-autorizado/nao-autorizado.componen
 import { FooterComponent } from './footer/footer.component';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { GeralGruposService } from '../geral-grupos/geral-grupos.service';
 
 registerLocaleData(localePt)
 
@@ -71,6 +72,7 @@ registerLocaleData(localePt)
     MoneyHttp,
     DashboardService,
     RelatorioService,
+    GeralGruposService,
 
     { provide: LOCALE_ID, useValue: 'pt-BR' }
   ],

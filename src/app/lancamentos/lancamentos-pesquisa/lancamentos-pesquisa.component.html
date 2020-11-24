@@ -51,12 +51,12 @@
                       {{ lan.valor | currency :'BRL':'symbol':'1.2-2':'pt'   }}
                   </td>
                   <td style="text-align: center;">
-                    <a class="p-button-outlined" style="margin-right: 10px;" type="button" pButton icon="pi pi-pencil"
+                    <a style="margin-right: 10px;" type="button" pButton icon="pi pi-pencil"
                       pTooltip="Atualizar" tooltipPosition="top" 
                       [routerLink]="['/lancamentos', lan.codigo]">
                     </a>
 
-                    <button class="p-button-outlined" pButton  icon="pi pi-trash"
+                    <button  pButton  icon="pi pi-trash"
                             pTooltip="Excluir" tooltipPosition="top"
                             [disabled]="!auth.temPermissao('ROLE_REMOVER_LANCAMENTO')"
                             (click)="confirmarExclusao(lan)">

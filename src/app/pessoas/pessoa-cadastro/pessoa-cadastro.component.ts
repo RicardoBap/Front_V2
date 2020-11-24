@@ -32,7 +32,7 @@ export class PessoaCadastroComponent implements OnInit {
       this.carregarPessoa(codigoPessoa)
     }
 
-    this.title.setTitle('Nova pessa')
+    this.title.setTitle('Nova pessoa')
   }
 
   salvar(pessoaForm: NgForm) {
@@ -41,7 +41,7 @@ export class PessoaCadastroComponent implements OnInit {
     } else {
       this.adicionarPessoa(pessoaForm)
     }
-  }
+  } 
 
   get atualizando() {
     return Boolean(this.pessoa.codigo)

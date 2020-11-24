@@ -67,7 +67,7 @@ export class UsuarioService {
       .append('Content-Type', 'application/json')
 
     const body = JSON.stringify(usuario)
-    return this.http.post<Usuario>(`${this. usuariosUrl}`, usuario)
+    return this.http.post<Usuario>(`${this.usuariosUrl}`, usuario)
       .toPromise()
       .then(response => response)
   }

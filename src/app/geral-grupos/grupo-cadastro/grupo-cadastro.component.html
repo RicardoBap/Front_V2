@@ -1,0 +1,181 @@
+<div class="container">
+  <div class="p-col-12">
+
+  <form autocomplete="off" #grupoForm="ngForm" (ngSubmit)="salvar(grupoForm)">
+
+    <div class="p-grid">
+
+      <div class="p-col-12">
+        <h1>{{ atualizando ? 'Atualização de' : 'Novo' }} Grupo</h1>
+      </div>
+
+      <div class="p-col-12  p-fluid">
+        <label for="nome">Nome</label>
+        <input id="nome" class="form-control" type="text" pInputText
+               name="nome" ngModel #nome="ngModel" required minlength="5"
+               [(ngModel)]="grupo.nome" />
+        <app-message [control]="nome" error="required" text="Informe o nome"></app-message>
+        <app-message [control]="nome" error="minlength"  text="Você digitou apenas {{ nome.errors?.minlength?.actualLength }}."></app-message>
+      </div>
+
+      <div class="p-col-12  p-sm-9  p-fluid">
+        <label for="logradouro">Logradouro</label>
+        <input id="logradouro" type="text" pInputText name="logradouro" ngModel #logradouro="ngModel" required
+               [(ngModel)]="grupo.logradouro" />               
+        <app-message [control]="logradouro" error="required" text="Informe o logradouro"></app-message>
+      </div>
+
+      <div class="p-col-12  p-sm-3  p-fluid">
+        <label for="numero">Número</label>
+        <input id="numero" class="form-control" type="text" pInputText
+               name="numero" ngModel #numero="ngModel" required
+               [(ngModel)]="grupo.numero" />
+        <app-message [control]="numero" error="required" text="Informe o numero"></app-message>
+      </div>
+
+      <div class="p-col-12  p-sm-4  p-fluid">
+        <label for="complemento">Complemento</label>
+        <input id="complemento" type="text" pInputText name="complemento" ngModel #complemento="ngModel"
+               [(ngModel)]="grupo.complemento" />
+      </div>
+
+      <div class="p-col-12  p-sm-4  p-fluid">
+        <label for="bairro">Bairro</label>
+        <input id="bairro" class="form-control" type="text" pInputText name="bairro" ngModel #bairro="ngModel" required
+               [(ngModel)]="grupo.bairro" />
+        <app-message [control]="bairro" error="required" text="Informe o bairro"></app-message>
+      </div>
+
+      <div class="p-col-12  p-sm-4  p-fluid">
+        <label>CEP</label>
+        <p-inputMask type="text" mask="99999-999"
+                     name="cep" ngModel #cep="ngModel" required
+                     [(ngModel)]="grupo.cep" >
+        </p-inputMask>
+        <app-message [control]="cep" error="required" text="Informe o cep"></app-message>
+      </div>
+
+      <div class="p-col-12  p-sm-6  p-fluid">
+        <label for="estado">Estado</label>
+        <p-dropdown id="estado" class="form-control" [options]="estados" placeholder="Selecione..." 
+              name="estadoSelecionado" [(ngModel)]="estadoSelecionado" (onChange)="carregarCidades()"
+              #estado="ngModel" required >
+          <app-message [control]="estado" error="required" text="Informe o estado"></app-message>        
+          </p-dropdown>      
+      </div>
+
+      <div class="p-col-12  p-sm-6  p-fluid">
+        <label for="cidade">Cidade</label>
+        <p-dropdown id="cidade" class="form-control" [options]="cidades" placeholder="Selecione..." 
+            [(ngModel)]="grupo.cidade.codigo" name="cidade" #cidade="ngModel" required [disabled]="!estadoSelecionado" >            
+        </p-dropdown>
+        <app-message [control]="cidade" error="required" text="Informe a cidade"></app-message>       
+      </div>
+      
+      <div class="p-col-12">
+        <p-panel header="Contatos">
+          <app-grupo-cadastro-contato [contatos]="grupo.contatos"></app-grupo-cadastro-contato>
+        </p-panel>
+      </div>
+
+      <div class="p-col-12" style="margin-bottom: 100px">
+        <button pButton type="submit" label="Salvar" style="margin-right: 10px;"></button> <!-- [disabled]="!pessoaForm.valid"-->
+        <button pButton type="button" label="Novo" class="p-button-secondary" (click)="novo(grupoForm)"></button>
+        <a routerLink="/grupos" style="margin-left: 10px;">Voltar para a pesquisa</a>
+      </div>
+    </div>
+
+  </form>
+
+</div>
+</div>
+
+
+
+
+
+
+
+<!-- div class="container">
+    <div class="p-col-12">
+  
+    <form autocomplete="off" [formGroup]="formulario" novalidate (ngSubmit)="salvar()" >
+  
+      <div class="p-grid">  
+  
+        <div class="p-col-12">
+          <h1>{{ atualizando ? 'Atualização de' : 'Novo' }} Grupo</h1>
+        </div>       
+  
+        <div class="p-col-12  p-fluid">
+          <label for="nome">Nome</label>
+          <input id="nome" class="form-control" type="text" pInputText name="nome"  formControlName="nome" />            
+            <small *ngIf="formulario.get('nome').valid && formulario.get('nome').touched" class="form-text text-sucess">OK</small>
+            <small *ngIf="!formulario.get('nome').valid && formulario.get('nome').touched" class="form-text text-danger">Nome inválido</small>
+        </div>
+  
+        <div class="p-col-12  p-sm-9  p-fluid">
+          <label for="logradouro">Logradouro</label>
+          <input id="logradouro" type="text" pInputText name="logradouro" formControlName="logradouro" />
+          <small *ngIf="formulario.get('logradouro').valid && formulario.get('logradouro').touched" class="form-text text-sucess">OK</small>
+          <small *ngIf="!formulario.get('logradouro').valid && formulario.get('logradouro').touched" class="form-text text-danger">Logradouro inválido</small>       
+        </div>
+  
+        <div class="p-col-12  p-sm-3  p-fluid">
+          <label for="numero">Número</label>
+          <input id="numero" class="form-control" type="text" pInputText name="numero" formControlName="numero"  />
+          <small *ngIf="formulario.get('numero').valid && formulario.get('numero').touched" class="form-text text-sucess">OK</small>
+          <small *ngIf="!formulario.get('numero').valid && formulario.get('numero').touched" class="form-text text-danger">Número inválido</small>        
+        </div>
+  
+        <div class="p-col-12  p-sm-4  p-fluid">
+          <label for="complemento">Complemento</label>
+          <input id="complemento" type="text" pInputText name="complemento" formControlName="complemento" />
+        </div>
+  
+        <div class="p-col-12  p-sm-4  p-fluid">
+          <label for="bairro">Bairro</label>
+          <input id="bairro" class="form-control" type="text" pInputText name="bairro" formControlName="bairro" />
+          <small *ngIf="formulario.get('bairro').valid && formulario.get('bairro').touched" class="form-text text-sucess">OK</small>
+          <small *ngIf="!formulario.get('bairro').valid && formulario.get('bairro').touched" class="form-text text-danger">Bairro inválido</small>        
+        </div>
+  
+        <div class="p-col-12  p-sm-4  p-fluid">
+          <label>CEP</label>
+          <p-inputMask type="text" mask="99999-999" name="cep"
+            formControlName="cep" >
+          </p-inputMask>          
+        </div>  
+       
+  
+        <div class="p-col-12  p-sm-6  p-fluid" formGroupName="estado">
+          <label for=estado>Estado</label>         
+          <p-dropdown id="estado" class="form-control" [options]="estados"  placeholder="Selecione..." 
+              name="estadoSelecionado" formControlName="codigo" 
+              [(ngModel)]="estadoSelecionado" (onChange)="carregarCidades()">
+          </p-dropdown>         
+          <small *ngIf="formulario.get('estado').valid && formulario.get('estado').touched" class="form-text text-sucess">OK</small>
+          <small *ngIf="!formulario.get('estado').valid && formulario.get('estado').touched" class="form-text text-danger">Estado inválido</small>         
+        </div>
+
+        <div class="p-col-12  p-sm-6  p-fluid" formGroupName="cidade">
+          <label for="cidade">Cidade</label>
+          <p-dropdown class="form-control" [options]="cidades"  formControlName="codigo"
+                    name="cidade"  placeholder="Selecione..." >
+          </p-dropdown>         
+          <small *ngIf="formulario.get('cidade').valid && formulario.get('cidade').touched" class="form-text text-sucess">OK</small>
+          <small *ngIf="!formulario.get('cidade').valid && formulario.get('cidade').touched" class="form-text text-danger">Cidade inválida</small>        
+        </div>
+
+  
+        <div class="p-col-12" style="margin-bottom: 100px">
+          <button pButton type="submit" label="Salvar" style="margin-right: 10px;" ></button>
+          <button pButton type="button" label="Novo" class="p-button-secondary" (click)="novo()"></button>
+          <a routerLink="/grupos" style="margin-left: 10px;">Voltar para a pesquisa</a>
+        </div>
+      </div>
+  
+    </form>
+  
+  </div>
+  </div -->

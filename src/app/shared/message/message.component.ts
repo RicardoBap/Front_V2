@@ -4,17 +4,17 @@ import { FormControl } from '@angular/forms';
 @Component({
   selector: 'app-message',
   template: `
-    <small *ngIf="temErro()" class="ui-message ui-messages-error">
+    <small *ngIf="temErro()" class="p-message p-messages-error" >
       {{ text }}
-    </small>
+    </small>  
   `,
   styles: [`
-    .ui-messages-error {
+    .p-messages-error {
       margin-top: 3px;
       padding: 2px;
       font-weight: bold;
-      background-color: red;
-      color: #FFFFFF;
+      background-color: #FFE4E1;
+      color: red;
     }
   `]
 })

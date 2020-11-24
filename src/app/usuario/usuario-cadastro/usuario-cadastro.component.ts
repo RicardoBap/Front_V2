@@ -16,16 +16,31 @@ import { Validacoes } from './../validacoes';
 })
 export class UsuarioCadastroComponent implements OnInit {
 
-
   permissoes: Array<Permissao> = [
     { codigo: 3, descricao: 'ROLE_PESQUISAR_CATEGORIA'},
     { codigo: 6, descricao: 'ROLE_PESQUISAR_PESSOA'},
     { codigo: 9, descricao: 'ROLE_PESQUISAR_LANCAMENTO'}
   ]; // Inicia com permissao para pesquisar pessoas e lancamentos
+  
   selecione: Permissao; // Mostra as opções
   formulario: FormGroup
   //codigo: number
   usuario: Usuario
+
+  constructor(
+    private usuarioService: UsuarioService,
+    private errorHandler: ErrorHandlerService,
+    private fb: FormBuilder,
+    private messageService: MessageService,
+    private title: Title
+  ) {}
+
+  ngOnInit(){
+    //this.carregarPermissoes();
+    this.criarFormularioDeUsuario();
+
+    this.title.setTitle('Cadastro de usuários')
+  }
 
   criarFormularioDeUsuario() {
     this.formulario = this.fb.group({
@@ -40,20 +55,7 @@ export class UsuarioCadastroComponent implements OnInit {
     });
   }
 
-    constructor(
-      private usuarioService: UsuarioService,
-      private errorHandler: ErrorHandlerService,
-      private fb: FormBuilder,
-      private messageService: MessageService,
-      private title: Title
-    ) {}
-
-    ngOnInit(){
-      //this.carregarPermissoes();
-      this.criarFormularioDeUsuario();
-
-      this.title.setTitle('Cadastro de usuários')
-    }
+    
 /*
     carregarPermissoes() {
       this.usuarioService.listarTodas()
