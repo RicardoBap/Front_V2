@@ -1,0 +1,76 @@
+<div class="container">
+    <div class="p-col-12  cadastro-cidade" *ngIf="idCidadeCadastrada === undefined">
+   
+    <h1>Cadastro de cidades</h1>    
+
+    <form autocomplete="off" #cidadeForm="ngForm" (ngSubmit)="cadastrar(cidadeForm)" novalidate > 
+        
+        <!--pre>{{ cidadeForm.value | json }}</pre>
+        <pre>Valido = {{ cidadeForm.valid | json }}</pre>  
+        <pre>Invalido = {{ cidadeForm.invalid | json }}</pre-->  
+
+        <div class="p-fluid p-formgrid p-grid">                  
+
+            <div class="p-field p-col-12 p-sm-4">
+                <label for="estado">Estado</label> 
+                <p-dropdown id="estado" class="form-control" [options]="estados" placeholder="Selecione"
+                    name="estado" ngModel  required #estado="ngModel" [(ngModel)]="cidade.estado.codigo" > 
+                </p-dropdown>
+                <!-- pre>Valido = {{ estado.valid | json }}</pre --> 
+                <small *ngIf="estado.valid && estado.touched" class="form-text  text-success">OK</small>
+                <small *ngIf="!estado.valid && estado.touched" class="form-text  text-danger">Selecione o Estado</small>
+            </div>
+
+            <div class="p-field p-col-12 p-sm-8">
+                <label for="nome">Cidade</label>
+                <input id="nome" type="text" pInputText name="nome" ngModel #nome="ngModel"
+                    required minlength="3" maxlength="50" [(ngModel)]="cidade.nome" >
+                <small *ngIf="nome.valid && nome.touched" class="form-text  text-success">OK</small>
+                <small *ngIf="!nome.valid && nome.touched" class="form-text  text-danger">Cidade inválida</small>
+            </div>
+            
+        </div>
+
+        <div style="margin-bottom: 100px; margin-top: 50px;" >
+            <button pButton type="submit" label="Salvar" style="margin-right: 10px;"></button>
+            <button pButton type="button" label="Novo" class="p-button-secondary" ></button>
+            <a class="p-button-text" pButton routerLink="/cidades" style="margin-left: 10px;" label="Voltar para pesquisa"></a>
+        </div>        
+
+    </form>
+
+    </div>
+
+    <div class="cadastro-cidade" *ngIf="idCidadeCadastrada !== undefined">
+        <div class="container">
+
+            <div class="linha  row">
+             
+                <div class="p-grid  p-justify-center">
+                    <h1><i class="pi  pi-thumbs-up"></i></h1>
+                </div>
+          
+                <div class="p-grid  p-justify-center">
+                    <h2>Cadastro feito com sucesso</h2><br>                    
+                </div>
+
+                <div class="p-grid  p-justify-center">                   
+                    <h4>Cidade de número <b> {{ idCidadeCadastrada }} </b></h4>
+                </div>
+                
+                <div class="p-col-12">
+                    <p>Você cadastrou uma nova cidade com sucesso.<br/>
+                    Clique no botao para cadastrar novo grupo e escolha a cidade desejada.</p>        
+                  </div>
+          
+                <div class="p-grid  p-justify-center  botao">                                       
+                    <a class="p-button-secondary" pButton routerLink="/grupos/novo" label="Novo grupo"> </a>
+                    <a class="p-button-text" pButton routerLink="/cidades" label="Pesquisar cidades"></a>                   
+                </div>    
+              
+            </div> 
+          
+        </div>   
+            
+    </div>
+</div>

@@ -25,8 +25,7 @@ export class GeralGruposService {
     this.cidadesUrl = `${environment.apiUrl}/cidades`
   } 
 
-  pesquisar(filtro: GruposFiltro): Promise<any> {    
-
+  pesquisar(filtro: GruposFiltro): Promise<any> {
     let params = new HttpParams({
       fromObject: {
         page: filtro.pagina.toString(),

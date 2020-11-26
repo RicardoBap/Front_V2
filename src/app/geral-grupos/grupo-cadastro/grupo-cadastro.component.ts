@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
-import { ErrorHandlerService } from 'src/app/core/error-handler.service';
-
-import { Contato, Grupo } from '../../core/geral-grupos.model';
-
-import { GeralGruposService } from '../geral-grupos.service';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
+
+import { ErrorHandlerService } from 'src/app/core/error-handler.service';
+import { Grupo } from '../../core/geral-grupos.model';
+import { GeralGruposService } from '../geral-grupos.service';
+
 import { MessageService } from 'primeng/api';
-import { FormControl, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-grupo-cadastro',
@@ -88,7 +88,8 @@ export class GrupoCadastroComponent implements OnInit {
     }
   }  
 
-  adicionarGrupo(grupoForm: NgForm) {   
+  adicionarGrupo(grupoForm: NgForm) {  
+    //console.log(this.grupo) 
     this.geralGruposService.adicionar(this.grupo)
     .then(grupoAdicionado => {
       this.messageService.add(

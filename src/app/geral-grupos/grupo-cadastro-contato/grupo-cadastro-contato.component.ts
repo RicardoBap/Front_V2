@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+
 import { Contato } from 'src/app/core/geral-grupos.model';
 
 @Component({

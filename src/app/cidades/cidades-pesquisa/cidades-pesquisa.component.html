@@ -1,0 +1,101 @@
+<div class="container">    
+    <div class="p-col-12">
+
+    <h1>Pesquisa de cidades</h1>
+
+    <form autocomplete="off" (ngSubmit)="pesquisar()" >  <!-- (ngSubmit)="pesquisar()" -->
+
+        <div class="p-fluid p-formgrid p-grid">            
+            
+            <div class="p-field p-col-12 p-sm-4">
+                <label for="estado">Estado</label> 
+                <p-dropdown id="estado" class="form-control" [options]="estados" placeholder="Selecione"
+                    name="estado" ngModel #estado="ngModel" [(ngModel)]="filtro.estado" > 
+                </p-dropdown>                                
+            </div>
+
+            <div class="p-field p-col-12 p-sm-8">
+                <label for="nome">Cidade</label>
+                <input id="nome" type="text" pInputText name="nome" ngModel #nome="ngModel"
+                    [(ngModel)]="filtro.nome" >                
+            </div>
+            
+        </div>
+
+        <div style="margin-bottom: 30px" >
+            <button pButton label="Pesquisar" type="submit" (click)="pesquisar()"></button>        
+        </div>        
+
+        
+        <!--p-table [value]="cidades">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Estado</th>
+                <th>Cidade</th>
+                <th class="col-botao"></th>                
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-cidade >
+            <tr>
+                <td>{{cidade.estado?.nome}}</td>
+                <td>{{cidade.nome}}</td>
+                <td>
+                    <a style="margin-right: 10px;" href="#" pButton icon="pi pi-pencil"
+                    pTooltip="Atualizar" tooltipPosition="top"                      
+                    >
+                </a>
+                <button pButton icon="pi pi-trash"
+                pTooltip="Excluir" tooltipPosition="top"                        
+                >
+            </button>
+        </td>               
+    </tr>
+</ng-template>
+</p-table-->
+
+    <div class="p-col-12">    <!--  (onLazyLoad)="aoMudarPagina($event)" -->
+        <p-table styleClass="p-datatable-sm  p-datatable-striped  p-datatable-responsive" 
+            [resizableColumns]="true"
+            [value]="cidades" [responsive]="true"
+            [lazy]=true  (onLazyLoad)="aoMudarPagina($event)" #tabela [totalRecords]="totalRegistros"
+            [paginator]="true" [rows]="filtro.itensPorPagina"  [showCurrentPageReport]="true"
+            currentPageReportTemplate="Mostrando {first} ate {last} total de {totalRecords} cidades" >
+            <ng-template pTemplate="header">
+                <tr>
+                    <th class="tabela-cidade-coluna-codigo" style="text-align: centers;">Código</th>
+                    <th class="tabela-cidade-coluna-cidade">Cidade</th>
+                    <th class="tabela-cidade-coluna-estado">Estado</th>
+                    <th class="col-botao"></th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-cidade>
+                <tr>
+                    <td style="text-align: center;">{{ cidade.codigo }}</td>                     
+                    <td>{{ cidade.cidade }}</td>
+                    <td>{{ cidade.estado }}</td>                    
+                    <td>  
+                        <a class="p-button-sm  p-button-text"
+                            style="margin-right: 10px;" href="#" pButton icon="pi pi-pencil"
+                            pTooltip="Atualizar" tooltipPosition="top"                           
+                            >
+                        </a>
+                        <button class="p-button-danger  p-button-text  p-button-sm"
+                            pButton icon="pi pi-times"
+                            pTooltip="Excluir" tooltipPosition="top"                            
+                        >
+                        </button>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>    
+
+    </form>
+
+    <div style="margin-bottom: 100px">
+        <a pButton type="button" routerLink="/cidades/nova" label="Nova Cidade"></a> 
+    </div>             
+
+    </div>
+</div>
+

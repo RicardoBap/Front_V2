@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'usuarios', loadChildren: () => import('./usuario/usuario.module').then(m => m.UsuarioModule) },
 
   { path: 'grupos', loadChildren: () => import('./geral-grupos/geral-grupos.module').then(m => m.GeralGruposModule)  },
+  { path: 'cidades', loadChildren: () => import('./cidades/cidades.module').then(m => m.CidadesModule)  },
 
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   

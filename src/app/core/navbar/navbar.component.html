@@ -79,6 +79,10 @@
       <a routerLink="/grupos">Grupos</a>
     </li>
 
+    <li class="navbar-menuitem" >
+      <a routerLink="/cidades">Cidades</a>
+    </li>
+
     <li class="navbar-menuitem"
       *ngIf="auth.temPermissao('ROLE_CADASTRAR_USUARIO')"  routerLinkActive="ativo" >
       <a routerLink="/usuarios/novo">Cadastrar usuários</a>

@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+
 import { ConfirmationService, LazyLoadEvent, MessageService } from 'primeng/api';
+
 import { ErrorHandlerService } from 'src/app/core/error-handler.service';
-import { GeralGruposModule } from '../geral-grupos.module';
 import { GeralGruposService, GruposFiltro } from '../geral-grupos.service';
 
 @Component({
@@ -15,8 +16,6 @@ export class GruposPesquisaComponent implements OnInit {
   filtro = new GruposFiltro()
   grupos = []
   @ViewChild('tabela')  grid
-
-  //cols: any[];  
 
   constructor(
     private geralGruposService: GeralGruposService,

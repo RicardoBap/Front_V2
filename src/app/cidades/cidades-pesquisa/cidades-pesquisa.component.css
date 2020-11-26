@@ -1,0 +1,8 @@
+.tabela-cidade-coluna-codigo {
+    width: 70px;
+}
+
+.tabela-cidade-coluna-estado {
+    width: 150px;
+    text-align: right;
+}
