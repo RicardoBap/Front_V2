@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 import { ConfirmationService, LazyLoadEvent, MessageService } from 'primeng/api';
 
@@ -21,10 +22,12 @@ export class GruposPesquisaComponent implements OnInit {
     private geralGruposService: GeralGruposService,
     private errorHandler: ErrorHandlerService,
     private confirmation: ConfirmationService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private title: Title
     ) { }
 
   ngOnInit(): void {
+    this.title.setTitle('Pesquisa de grupos')
     this.pesquisar()
   }
 

@@ -45,6 +45,11 @@ export class CidadeService {
       .toPromise()
   }
 
+  buscarPeloCodigo(codigo: number): Promise<Cidade> {
+    return this.http.get<any>(`${this.cidadesUrl}/${codigo}`)
+    .toPromise()
+  }
+
   pesquisar(filtro: CidadeFiltro): Promise<any> {
     //console.log(filtro)      
     let params = new HttpParams({
@@ -75,6 +80,27 @@ export class CidadeService {
     })
   }
 
+  pesquisarCidades(estado): Promise<Cidade[]> {
+    let params = new HttpParams    
+    params = params.append('estado', estado)    
+   
+    return this.http.get<any>(this.cidadesUrl, { params } )
+      .toPromise()      
+      .then(response => response)
+  }
+
+  atualizar(cidade: Cidade, codigo: number): Promise<Cidade> {    
+    const body = JSON.stringify(cidade);
+    return this.http.put<Cidade>(`${this.cidadesUrl}/${codigo}`, cidade) // body , { headers }
+      .toPromise()
+      .then(response => response)
+  }
+
+  excluir(codigo: number): Promise<void> { 
+    return this.http.delete<any>(`${this.cidadesUrl}/${codigo}`  ) 
+      .toPromise()
+      .then(() => null)
+  }
 
 
 }

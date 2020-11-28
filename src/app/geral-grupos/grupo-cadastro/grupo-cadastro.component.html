@@ -62,15 +62,18 @@
               #estado="ngModel" required >
           <app-message [control]="estado" error="required" text="Informe o estado"></app-message>        
           </p-dropdown>      
-      </div>
-
+      </div>      
+      
       <div class="p-col-12  p-sm-6  p-fluid">
-        <label for="cidade">Cidade</label>
+        <label for="cidade" style="margin-right: 10px;">Cidade
+          <img  *ngIf="cidadeLoading" src="../../../assets/icones/mini-loading.gif"  >
+        </label>   
         <p-dropdown id="cidade" class="form-control" [options]="cidades" placeholder="Selecione..." 
-            [(ngModel)]="grupo.cidade.codigo" name="cidade" #cidade="ngModel" required [disabled]="!estadoSelecionado" >            
-        </p-dropdown>
-        <app-message [control]="cidade" error="required" text="Informe a cidade"></app-message>       
-      </div>
+            [(ngModel)]="grupo.cidade.codigo" name="cidade" #cidade="ngModel" required [disabled]="!estadoSelecionado" >                    
+        </p-dropdown>              
+        <!--app-message [control]="cidade" error="required" text="Informe a cidade"></app-message-->
+      </div>   
+             
       
       <div class="p-col-12">
         <p-panel header="Contatos">

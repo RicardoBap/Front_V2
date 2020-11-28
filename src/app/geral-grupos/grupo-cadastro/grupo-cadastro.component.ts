@@ -20,6 +20,7 @@ export class GrupoCadastroComponent implements OnInit {
   estados: any[]
   cidades: any[]
   estadoSelecionado: number
+  cidadeLoading: boolean = false
   
 
   constructor(   
@@ -34,7 +35,7 @@ export class GrupoCadastroComponent implements OnInit {
    ngOnInit(): void {
     const codigoGrupo = this.route.snapshot.params['codigo']
     
-    this.title.setTitle('Nova pessoa')
+    this.title.setTitle('Novo grupo')
 
     this.carregarEstados()
 
@@ -43,6 +44,14 @@ export class GrupoCadastroComponent implements OnInit {
     }
   }
 
+  get atualizando() {
+    return Boolean(this.grupo.codigo)
+  }
+
+  atualizarTitulo() {
+    this.title.setTitle(`Atualização de grupo: ${this.grupo.nome}`)
+  } 
+ 
   carregarEstados() {
     this.geralGruposService.listarEstados()
       .then(lista => {
@@ -53,17 +62,15 @@ export class GrupoCadastroComponent implements OnInit {
   }
 
   carregarCidades() {
+    this.cidadeLoading = true 
     this.geralGruposService.pesquisarCidades(this.estadoSelecionado)
-      .then(lista => {       
+      .then(lista => {  
+        this.cidadeLoading = false    
         this.cidades = lista.map(c => (
           { label: c.nome, value: c.codigo }))
       })
       .catch(erro => this.errorHandler.handle(erro))
-  }
-
-  get atualizando() {
-    return Boolean(this.grupo.codigo)
-  }
+  } 
 
   carregarGrupo(codigo: number) {    
     this.geralGruposService.buscarPeloCodigo(codigo)
@@ -122,9 +129,7 @@ export class GrupoCadastroComponent implements OnInit {
     this.router.navigate([ 'grupos/novo' ])
   }
 
-  atualizarTitulo() {
-    this.title.setTitle(`Atualização de grupo: ${this.grupo.nome}`)
-  }  
+   
   
 } 
 

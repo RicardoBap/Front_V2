@@ -62,7 +62,7 @@
             currentPageReportTemplate="Mostrando {first} ate {last} total de {totalRecords} cidades" >
             <ng-template pTemplate="header">
                 <tr>
-                    <th class="tabela-cidade-coluna-codigo" style="text-align: centers;">Código</th>
+                    <th class="tabela-cidade-coluna-codigo" style="text-align: center;">Código</th>
                     <th class="tabela-cidade-coluna-cidade">Cidade</th>
                     <th class="tabela-cidade-coluna-estado">Estado</th>
                     <th class="col-botao"></th>
@@ -76,12 +76,14 @@
                     <td>  
                         <a class="p-button-sm  p-button-text"
                             style="margin-right: 10px;" href="#" pButton icon="pi pi-pencil"
-                            pTooltip="Atualizar" tooltipPosition="top"                           
+                            pTooltip="Atualizar" tooltipPosition="top"
+                            [routerLink]="['/cidades', cidade.codigo]"                        
                             >
                         </a>
                         <button class="p-button-danger  p-button-text  p-button-sm"
                             pButton icon="pi pi-times"
-                            pTooltip="Excluir" tooltipPosition="top"                            
+                            pTooltip="Excluir" tooltipPosition="top" 
+                            (click)="confirmarExclusao(cidade)"                           
                         >
                         </button>
                     </td>
