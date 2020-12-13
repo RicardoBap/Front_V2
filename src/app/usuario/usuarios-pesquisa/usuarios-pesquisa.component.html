@@ -24,20 +24,27 @@
       currentPageReportTemplate="Mostrando {first} até {last} de {totalRecords} registros" >
         <ng-template pTemplate="header">
             <tr>
-                <th class="col-codigo">Cod</th>
-                <th class="col-nome">Nome</th>
+                <!--th class="col-codigo">Cod</th-->
+                <th >Nome</th>
                 <th>E-mail</th>
-                <th class="col-senha">Senha</th>
+                <th>Senha</th>
+                <th class="tabela-usuario-col-ativo">Status</th>
                 <th>Permissões</th>
                 <th class="col-botao"></th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-usuario>
             <tr>
-                <td style="text-align: center;">{{ usuario.codigo }}</td>
-                <td style="text-align: center;">{{ usuario.nome }}</td>
-                <td>{{ usuario.email }}</td>
+                <!--td style="text-align: center;">{{ usuario.codigo }}</td-->
+                <td>{{ usuario.nome }}</td>
+                <td>{{ usuario.email }}</td>                
                 <td>{{ usuario.senhaUsuario }}</td>
+                <td>
+                  <a href="javascript:;" [pTooltip]="usuario.status == true ? 'Desativar' : 'Ativar'" tooltipPosition="top"
+                     (click)="alternarStatus(usuario)"  [style.color]="usuario.ativo === false ? 'red' : 'blue'" style="font-weight: 600;">
+                    {{ usuario.ativo == true ? 'Ativo' : 'Inativo' }}                
+                  </a>
+                </td>
                 <td><span *ngFor="let permissao of usuario.permissoes">{{ permissao.codigo }}, </span></td>
                 <td style="text-align: center;">
                   <a style="margin-right: 10px;" href="#" pButton icon="pi pi-pencil"

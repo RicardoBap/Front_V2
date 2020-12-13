@@ -1,0 +1,51 @@
+<div class="container">
+
+    <div class="p-col-12">
+
+        <div class="p-grid">
+
+            <div class="p-col-12">
+                <h1>Cadastro de eventos</h1>
+            </div>
+
+            <div class="p-col-12  p-sm-4  p-fluid">
+                <label for="dataEvento">Data do evento</label>
+                <input id="dataEvento" class="form-control" type="date" pInputText  />                
+            </div>
+
+            <div class="p-col-12  p-sm-4  p-fluid">
+                <label for="horaEvento">Hora do evento</label>
+                <p-calendar  [timeOnly]="true" inputId="timeonly" placeholder="19:00"></p-calendar>
+                <!--input id="horaEvento" class="form-control" type="text" pInputText  /-->                
+            </div>
+
+            <div class="p-col-12  p-sm-4  p-fluid">
+                <label for="localEvento">Local do evento</label>               
+                <p-dropdown class="form-control"  placeholder="Selecione"  [options]="grupos" > 
+                </p-dropdown>                
+            </div>
+
+            <div class="p-col-12  p-sm-5  p-fluid">
+                <label for="tipoEvento">Tipo do evento</label>
+                <input id="tipoEvento" class="form-control" type="text" pInputText  />                
+            </div>
+
+            <div class="p-col-12  p-sm-6  p-fluid">
+                <label for="temaEvento">Tema do evento</label>
+                <input id="temaEvento" class="form-control" type="text" pInputText  />                
+            </div>
+
+            <div class="p-col-12  p-sm-4  p-fluid">
+                <label for="palestranteEvento">Palestrante do evento</label>
+                <input id="palestranteEvento" class="form-control" type="text" pInputText  />                
+            </div>
+
+            <div class="p-col-12  p-sm-2  p-fluid" id="destaque">
+                <label class="destaque" for="destaque">Destaque</label>
+                <p-toggleButton  onIcon="pi  ;pi-check" offIcon="pi  pi-times"></p-toggleButton>          
+            </div>
+
+        </div>
+
+    </div>
+</div>

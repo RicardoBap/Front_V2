@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="p-col-12">
+  <div class="p-col-12 cadastro-grupo" *ngIf="idGrupoCadastrado === undefined">
 
   <form autocomplete="off" #grupoForm="ngForm" (ngSubmit)="salvar(grupoForm)">
 
@@ -55,6 +55,15 @@
         <app-message [control]="cep" error="required" text="Informe o cep"></app-message>
       </div>
 
+      <div class="p-col-12  p-fluid">
+        <label for="diaReuniao">Dias e horários de reuniões</label>
+        <input id="diaReuniao" class="form-control" type="text" pInputText
+               name="diaReuniao" ngModel #diaReuniao="ngModel" required minlength="10"
+               [(ngModel)]="grupo.diaReuniao" />
+        <app-message [control]="diaReuniao" error="required" text="Informe o dia e horário da reunião"></app-message>
+        <app-message [control]="diaReuniao" error="minlength"  text="Você digitou apenas {{ nome.errors?.minlength?.actualLength }}."></app-message>
+      </div>
+
       <div class="p-col-12  p-sm-6  p-fluid">
         <label for="estado">Estado</label>
         <p-dropdown id="estado" class="form-control" [options]="estados" placeholder="Selecione..." 
@@ -72,8 +81,30 @@
             [(ngModel)]="grupo.cidade.codigo" name="cidade" #cidade="ngModel" required [disabled]="!estadoSelecionado" >                    
         </p-dropdown>              
         <!--app-message [control]="cidade" error="required" text="Informe a cidade"></app-message-->
+      </div>
+
+      <div class="p-col-12"  > <!--*ngIf="!grupo.anexo"-->
+        <!--input pInputText name="anexo" ngModel #anexo="ngModel" [(ngModel)]="grupo.anexo" >
+        <input  pInputText name="anexoUrl" ngModel #anexoUrl="ngModel" [(ngModel)]="grupo.anexoUrl" -->
+        <p-fileUpload name="anexo"  
+          multiple="multiple"  maxFileSize="1000000"
+          chooseLabel="Anexar" accept="image/*, application/*" 
+          [url]="urlUploadAnexo" 
+          (onBeforeSend)="antesUpLoadFoto($event)" 
+          (onUpload)="aoTerminarUpload($event)"
+          (onError)="erroUpload($event)" >
+        </p-fileUpload>
+      </div>
+<!--img src="https://sv-salvavidas-arquivos.s3-sa-east-1.amazonaws.com/f8f9b891-629d-4581-8d5b-2020fea98c34_20200218_125120.jpg"-->
+      <div class="p-col-12  p-d-flex p-jc-end" *ngIf="grupo.anexo">         
+        <a id="link__anexo" target="_blank" pTooltip="Baixar anexo" tooltipPosition="top"          
+          [href]="grupo.anexoUrl">{{ nomeAnexo }}
+        </a>
+        <button pButton type="button" class="p-button-danger p-button-outlined p-button-text" icon="pi pi-times" 
+          pTooltip="Excluir" tooltipPosition="top" (click)="removerAnexo()" >
+        </button>          
       </div>   
-             
+                
       
       <div class="p-col-12">
         <p-panel header="Contatos">
@@ -91,7 +122,47 @@
   </form>
 
 </div>
+
+<div class="cadastro-grupo" *ngIf="idGrupoCadastrado !== undefined">
+  <div class="container">
+
+      <div class="linha  row">
+       
+          <div class="p-grid  p-justify-center">
+              <h1><i class="pi  pi-thumbs-up"></i></h1>
+          </div>
+    
+          <div class="p-grid  p-justify-center">
+              <h2>Cadastro feito com sucesso</h2><br>                    
+          </div>
+
+          <div class="p-grid  p-justify-center">                   
+              <h4>Grupo de número <b> {{ idGrupoCadastrado }} </b></h4>
+          </div>
+          
+          <div class="p-col-12">
+              <p>Você cadastrou um novo grupo com sucesso.<br/>
+              Clique no link para voltar na página de pesquisa de grupo.</p>        
+            </div>
+    
+          <div class="p-grid  p-justify-center  botao">  
+              <a class="p-button-text" pButton routerLink="/grupos" label="Pesquisar grupos"></a>                   
+          </div>    
+        
+      </div> 
+    
+  </div>   
+      
 </div>
+
+
+</div>
+
+
+
+
+
+
 
 
 

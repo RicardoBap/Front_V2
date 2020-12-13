@@ -1,0 +1,37 @@
+<div class="container">
+
+    <div class="secao">
+        <h2>Encontre um grupo de A.A. mais próximo de você!</h2>
+        <h4>Estamos presente em mais de 120 países</h4>
+    </div>
+    
+    <hr/>   
+
+    <div  *ngFor="let grupo of grupos" > 
+        <div id="bloco" class="p-grid  p-ai-center  vertical-container">
+          
+            <div  class="p-col-12  p-sm-5 p-lg-5"  >
+                <div *ngIf="grupo.anexoUrl !== null;" >
+                    <img [src]="grupo.anexoUrl" >     
+                </div>                       
+            </div>        
+            <div class="p-col-12  p-sm-7  p-lg-7" >
+                <div  class="p-grid" >
+                    <div class="p-col-12 ">
+                        <h2>{{ grupo.nome }}</h2>
+                    </div>
+                    <div class="p-col-12" >
+                        <h3 style="margin-right: 30px;">Rua: <span>{{ grupo.logradouro }},</span> nº <span>{{ grupo.numero }}</span> - <span>{{ grupo.bairro }}</span></h3>
+                        <h3><span>{{ grupo.complemento }}</span></h3>     
+                        <h3><span>{{ grupo.cidade }}/{{grupo.estado }} </span> CEP:  <span>{{ grupo.cep }}</span></h3>
+                        <h3>Reuniões: <span>{{ grupo.diaReuniao }}</span></h3>
+                    </div>
+                </div>                  
+            </div>      
+        </div>
+        <hr/>
+    </div> 
+
+</div>
+
+<app-rodape></app-rodape>

@@ -1,8 +1,8 @@
 .tres-snippets {
   background-color: #3A3633;
   height: auto;
-  /*position: relative;
-  bottom: 140px; /* 120px */
+ /* position: relative;
+  bottom: 60px; /* 120px */
   z-index: 50;
 }
 
@@ -56,7 +56,7 @@
 	font-weight: 800 !important;
   text-shadow: 0 0 20px #fff, 0 -5px 20px #fff,
                0 5px 20px #fff;
-}
+} 
 
 /* ---------------< Body >-------------- */
 /* -----------< H1 titulo >---------- */

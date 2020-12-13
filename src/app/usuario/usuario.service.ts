@@ -106,4 +106,14 @@ export class UsuarioService {
         .then(() => null)
   }
 
+  mudarStatus(codigo: number, ativo: boolean): Promise<any> {
+    const headers = new HttpHeaders()
+      .append('Authorization', 'Basic YWRtaW46YWRtaW4=')
+      .append('Content-Type', 'application/json')
+
+      return this.http.put<any>(`${this.usuariosUrl}/${codigo}/ativo`, `${ativo}`, { headers })
+      .toPromise()
+      .then(() => null)
+  }
+
 }

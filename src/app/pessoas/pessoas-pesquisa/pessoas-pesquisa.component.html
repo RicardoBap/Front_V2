@@ -36,7 +36,7 @@
                   <td>{{ pessoa.endereco.telefone }}</td>
                   <td>{{ pessoa.endereco.encargo }}</td>
                   <td>
-                    <a href="javascript:;" [pTooltip]="pessoa.status == true ? 'Desativar' : 'Ativar'" tooltipPosition="top"
+                    <a  href="javascript:;" [pTooltip]="pessoa.status == true ? 'Desativar' : 'Ativar'" tooltipPosition="top"
                        (click)="alternarStatus(pessoa)"  [style.color]="pessoa.ativo === false ? 'red' : 'blue'" style="font-weight: 600;">
                       {{ pessoa.ativo == true ? 'Ativo' : 'Inativo' }}                
                     </a>

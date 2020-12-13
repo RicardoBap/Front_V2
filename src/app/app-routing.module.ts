@@ -16,6 +16,7 @@ const routes: Routes = [
 
   { path: 'grupos', loadChildren: () => import('./geral-grupos/geral-grupos.module').then(m => m.GeralGruposModule)  },
   { path: 'cidades', loadChildren: () => import('./cidades/cidades.module').then(m => m.CidadesModule)  },
+  { path: 'eventos', loadChildren: () => import('./eventos/eventos.module').then(m => m.EventosModule)  },
 
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
   { path: 'perguntas', loadChildren: () => import('./perguntas/perguntas.module').then(m => m.PerguntasModule) },
   { path: 'passos', loadChildren: () => import('./dozepassos/dozepassos.module').then(m => m.DozepassosModule) },
+  { path: 'nav-grupos', loadChildren: () => import('./home-grupos/home-grupos.module').then(m => m.HomeGruposModule) },
   { path: 'salvavidas', loadChildren: () => import('./grupo/grupo.module').then(m => m.GrupoModule) },
   { path: 'localizacao', loadChildren: () => import('./local/local.module').then(m => m.LocalModule) },
   { path: 'pagina-nao-encontrada', component: PaginaNaoEncontradaComponent },

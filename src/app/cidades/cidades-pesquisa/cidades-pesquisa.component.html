@@ -24,34 +24,8 @@
 
         <div style="margin-bottom: 30px" >
             <button pButton label="Pesquisar" type="submit" (click)="pesquisar()"></button>        
-        </div>        
-
-        
-        <!--p-table [value]="cidades">
-            <ng-template pTemplate="header">
-                <tr>
-                    <th>Estado</th>
-                <th>Cidade</th>
-                <th class="col-botao"></th>                
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-cidade >
-            <tr>
-                <td>{{cidade.estado?.nome}}</td>
-                <td>{{cidade.nome}}</td>
-                <td>
-                    <a style="margin-right: 10px;" href="#" pButton icon="pi pi-pencil"
-                    pTooltip="Atualizar" tooltipPosition="top"                      
-                    >
-                </a>
-                <button pButton icon="pi pi-trash"
-                pTooltip="Excluir" tooltipPosition="top"                        
-                >
-            </button>
-        </td>               
-    </tr>
-</ng-template>
-</p-table-->
+        </div>          
+       
 
     <div class="p-col-12">    <!--  (onLazyLoad)="aoMudarPagina($event)" -->
         <p-table styleClass="p-datatable-sm  p-datatable-striped  p-datatable-responsive" 
@@ -83,6 +57,7 @@
                         <button class="p-button-danger  p-button-text  p-button-sm"
                             pButton icon="pi pi-times"
                             pTooltip="Excluir" tooltipPosition="top" 
+                            [disabled]="!auth.temPermissao('ROLE_REMOVER_CIDADE')"
                             (click)="confirmarExclusao(cidade)"                           
                         >
                         </button>

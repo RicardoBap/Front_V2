@@ -4,6 +4,7 @@ import { Title } from '@angular/platform-browser';
 import { ConfirmationService, LazyLoadEvent, MessageService } from 'primeng/api';
 
 import { ErrorHandlerService } from 'src/app/core/error-handler.service';
+import { AuthService } from 'src/app/seguranca/auth.service';
 import { GeralGruposService, GruposFiltro } from '../geral-grupos.service';
 
 @Component({
@@ -23,7 +24,8 @@ export class GruposPesquisaComponent implements OnInit {
     private errorHandler: ErrorHandlerService,
     private confirmation: ConfirmationService,
     private messageService: MessageService,
-    private title: Title
+    private title: Title,
+    public auth: AuthService
     ) { }
 
   ngOnInit(): void {

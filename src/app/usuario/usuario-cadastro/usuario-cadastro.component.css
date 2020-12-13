@@ -13,3 +13,31 @@ input.ng-valid.ng-touched {
 .text-danger {
   color: #C00000;
 }
+
+h1 {
+  text-align: center;
+}
+
+/* ##########################################
+######## MENSAGEM DE SUCESSO ################
+############################################# */
+i {
+  font-size: 2em;    
+}
+
+.linha {
+  margin-top: 50px;
+}
+
+p {
+  text-align: center;
+}
+
+.botao {
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.espaco-botao {
+    margin-left: 10px;
+}

@@ -1,0 +1,38 @@
+.secao {
+    text-align: center;
+}
+
+.nome-grupo {
+    text-align: center;
+}
+
+h3 {
+    font-weight: 500;
+}
+
+span {
+    font-weight: 400;
+}
+
+#bloco {
+    text-align: center;
+}
+
+img {
+    width: 200px;
+    height: 226px;
+}
+
+h2 {
+    color: #C00000;
+}
+
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 0.2em;
+    margin-block-end: 0.2em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}

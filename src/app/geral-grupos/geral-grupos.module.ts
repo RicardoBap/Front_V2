@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { GruposPesquisaComponent } from './grupos-pesquisa/grupos-pesquisa.component';
 import { GrupoCadastroComponent } from './grupo-cadastro/grupo-cadastro.component';
+import { GrupoCadastroContatoComponent } from './grupo-cadastro-contato/grupo-cadastro-contato.component';
 import { GeralGruposRoutingModule } from './geral-grupos-routing.modules';
 
 import { FormsModule } from '@angular/forms';
@@ -12,13 +13,17 @@ import { TableModule } from 'primeng/table'
 import { InputMaskModule } from 'primeng/inputmask';
 import { DropdownModule } from 'primeng/dropdown';
 import { SharedModule } from '../shared/shared.module';
-import {PanelModule} from 'primeng/panel';
-import {DialogModule} from 'primeng/dialog';
-import { GrupoCadastroContatoComponent } from './grupo-cadastro-contato/grupo-cadastro-contato.component';
-
+import { PanelModule } from 'primeng/panel';
+import { DialogModule}  from 'primeng/dialog';
+import { FileUploadModule } from 'primeng/fileupload';
+import { TooltipModule } from 'primeng/tooltip';
 
 @NgModule({
-  declarations: [ GruposPesquisaComponent, GrupoCadastroComponent, GrupoCadastroContatoComponent ],
+  declarations: [ 
+    GruposPesquisaComponent,
+    GrupoCadastroComponent, 
+    GrupoCadastroContatoComponent
+  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -31,7 +36,9 @@ import { GrupoCadastroContatoComponent } from './grupo-cadastro-contato/grupo-ca
     InputMaskModule,
     DropdownModule,
     PanelModule,
-    DialogModule
+    DialogModule,
+    FileUploadModule,
+    TooltipModule
   ]
 })
 export class GeralGruposModule { }

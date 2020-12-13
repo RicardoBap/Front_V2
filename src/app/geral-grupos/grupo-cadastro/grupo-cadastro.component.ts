@@ -20,9 +20,9 @@ export class GrupoCadastroComponent implements OnInit {
   estados: any[]
   cidades: any[]
   estadoSelecionado: number
-  cidadeLoading: boolean = false
+  cidadeLoading: boolean = false 
+  idGrupoCadastrado: number
   
-
   constructor(   
     private geralGruposService: GeralGruposService,
     private errorHandler: ErrorHandlerService,
@@ -43,6 +43,59 @@ export class GrupoCadastroComponent implements OnInit {
       this.carregarGrupo(codigoGrupo)
     }
   }
+
+  // ############################# ANEXO FOTO ######################
+  get urlUploadAnexo() {
+    return this.geralGruposService.urlUpload()
+  } 
+
+  antesUpLoadFoto(event) {
+    event.xhr.setRequestHeader('Authorization', 'Bearer', + localStorage.getItem('token'))
+  }  
+
+  /*
+  aoTerminarUpload(event) {
+    const anexo = JSON.parse(event.xhr.response)
+  } */
+
+  /*
+  aoTerminarUpload(event) {
+    const anexo = (event.originalEvent)
+    console.log(event.originalEvent); 
+  } */
+
+  
+  anexo: string
+  anexoUrl: string
+  aoTerminarUpload(event) {
+    const files = (event.originalEvent)
+    //console.log(JSON.parse(event.xhr.response))
+
+    this.grupo.anexo = files.body.nome
+    this.grupo.anexoUrl = files.body.url
+    //console.log(event.originalEvent.body.nome); 
+    //console.log(foto)   
+    //console.log(contentType)    
+  } 
+  
+  removerAnexo() {
+    this.grupo.anexo = null
+    this.grupo.anexoUrl = null
+  }
+  
+  get nomeAnexo() {
+    const nome = this.grupo.anexo
+    if(nome) {
+      return nome.substring(nome.indexOf('_') + 1, nome.length)
+    }
+    return ''
+  }
+
+  erroUpload(event) {
+    this.errorHandler.handle('Erro ao tentar enviar anexo')
+  }
+
+  //################################################################
 
   get atualizando() {
     return Boolean(this.grupo.codigo)
@@ -95,14 +148,21 @@ export class GrupoCadastroComponent implements OnInit {
     }
   }  
 
+  //.then(idCidadeCadastrada => {
+    //this.idCidadeCadastrada = idCidadeCadastrada.codigo        
+  //} ) 
+
   adicionarGrupo(grupoForm: NgForm) {  
     //console.log(this.grupo) 
     this.geralGruposService.adicionar(this.grupo)
-    .then(grupoAdicionado => {
-      this.messageService.add(
-        {severity:'success', summary:'Service Message', detail:'Grupo adicionado com sucesso!'});
+    .then(idGrupoCadastrado => {
+      this.idGrupoCadastrado = idGrupoCadastrado.codigo        
+   
+    //.then(grupoAdicionado => {
+      //this.messageService.add(
+        //{severity:'success', summary:'Service Message', detail:'Grupo adicionado com sucesso!'});
 
-      this.router.navigate([ '/grupos/', grupoAdicionado.codigo ])     
+      //this.router.navigate([ '/grupos/', grupoAdicionado.codigo ])     
     } ) 
   .catch(erro => this.errorHandler.handle(erro))
   }
@@ -128,12 +188,10 @@ export class GrupoCadastroComponent implements OnInit {
 
     this.router.navigate([ 'grupos/novo' ])
   }
-
-   
   
 } 
 
-
+//######################################################################################################
 
 
 /*

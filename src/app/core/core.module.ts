@@ -22,6 +22,7 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
 import { SidebarModule } from 'primeng/sidebar';
+import {InputTextModule} from 'primeng/inputtext';
 
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
@@ -31,7 +32,11 @@ import { NaoAutorizadoComponent } from './nao-autorizado/nao-autorizado.componen
 import { FooterComponent } from './footer/footer.component';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { GeralGruposService } from '../geral-grupos/geral-grupos.service';
+//import { GeralGruposService } from '../geral-grupos/geral-grupos.service';
+
+//pipe
+import { PesquisaReduzida } from './../../app/core/util/pesquisa-reduzida.pipe';
+//import { HomeService } from '../home/home.service';
 
 registerLocaleData(localePt)
 
@@ -40,7 +45,8 @@ registerLocaleData(localePt)
     NavbarComponent,
     FooterComponent,
     PaginaNaoEncontradaComponent,
-    NaoAutorizadoComponent
+    NaoAutorizadoComponent,
+    PesquisaReduzida
   ],
   imports: [
     CommonModule,
@@ -49,6 +55,7 @@ registerLocaleData(localePt)
     ConfirmDialogModule,
     SidebarModule,
     CarouselModule,
+    InputTextModule,
 
     SegurancaRoutingModule,
 
@@ -72,7 +79,8 @@ registerLocaleData(localePt)
     MoneyHttp,
     DashboardService,
     RelatorioService,
-    GeralGruposService,
+    //GeralGruposService,
+    //HomeService,
 
     { provide: LOCALE_ID, useValue: 'pt-BR' }
   ],

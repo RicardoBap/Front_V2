@@ -18,6 +18,9 @@ export class Grupo {
     complemento: string
     bairro: string
     cep: string
+    diaReuniao: string
+    anexo: string
+    anexoUrl: string
     cidade = new Cidade()
     contatos = new Array<Contato>()  
       

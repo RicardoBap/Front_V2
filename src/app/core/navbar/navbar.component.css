@@ -19,7 +19,7 @@
 }
 
 .navbar-menuitem {
-  padding: 15px;
+  padding: 10px;
 }
 
 .navbar-menuitem a {
@@ -35,10 +35,11 @@
   background-color: #C0BBB7;
 }
 
+
 /* -----------< topo >-------------- */
 .stick {
   height: 40px;;
-  background-color: #3A3633;
+  background-color: #3f3c3a;
   opacity: 0.6;
   color:  #FFF;
 }
@@ -59,6 +60,37 @@
 .topo {
   font-family: 'Oswald', sans-serif;
 }
+/* -------------nav-pesquisa ----------- */
+.nav-pesquisa {
+  height: 70px;
+  padding: 0;
+}
+
+.campo-pesquisa {
+  margin-top: 8px;;
+}
+/* #######################################
+###### campo de perquisa keyup ###########
+########################################## */
+.list-group {
+  position: absolute;
+  z-index: 9995;
+  background-color: #E8E8E8;
+  width: 250px; 
+}
+
+ul.list-group {
+  padding-inline-start: 0;
+  margin-top: 40px;
+}
+
+li {
+  padding: 10px; 
+  list-style: none;
+  margin-left: 0;
+  font-weight: 500;
+}
+
 /* -----------< barra azul -------------- */
 .navbar {
   position: sticky;
@@ -72,7 +104,7 @@
   box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
   color: #FFF;
   font-weight: 600;
-  z-index: 9998
+  z-index: 9994
 }
 
 .p-button {
@@ -135,7 +167,7 @@ pi {
 
 /* Add a red background color to navbar links on hover */
 .navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: #006ACB[];
+  background-color: #006ACB;
   color: #FFF;
 }
 

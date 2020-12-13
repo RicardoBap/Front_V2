@@ -21,7 +21,7 @@ import { Component, OnInit } from '@angular/core';
     </div>
 
     <div class="p-grid  p-justify-center">
-      <a pButton routerLink="/home" label="Voltar para a página inicial"> </a>
+      <a class="botao" pButton routerLink="/home" label="Voltar para a página inicial"> </a>
     </div>     
     
   </div> 
@@ -39,6 +39,10 @@ import { Component, OnInit } from '@angular/core';
 
   p {
     text-align: center;
+  }
+
+  .botao {
+    margin-bottom: 100px;
   }
   `
   ]

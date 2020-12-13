@@ -1,0 +1,11 @@
+.destaque {
+    display: block;
+    margin-block-start: 0;
+    margin-block-end: 5px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;    
+}
+
+#destaque {
+    text-align: center;
+}

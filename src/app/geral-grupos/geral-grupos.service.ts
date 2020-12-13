@@ -1,8 +1,11 @@
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment.prod';
+
+import { Observable } from 'rxjs';
+
 import { Cidade, Estado, Grupo } from '../core/geral-grupos.model';
 import { MoneyHttp } from '../seguranca/money-http';
+import { environment } from 'src/environments/environment.prod';
 
 export class GruposFiltro {
   nome: string
@@ -18,6 +21,12 @@ export class GeralGruposService {
   gruposUrl: string
   cidadesUrl: string
   estadosUrl: string
+  uploadUrl: string
+
+  
+  urlUpload(): string {
+    return `${this.gruposUrl}/anexo`   
+  }
 
   constructor(private http: MoneyHttp) { 
     this.gruposUrl = `${environment.apiUrl}/grupos`
@@ -94,7 +103,7 @@ export class GeralGruposService {
     return this.http.get<Grupo>(`${this.gruposUrl}/${codigo}`) 
       .toPromise()
       .then(response => {
-        console.log(response)
+        //console.log(response)
         const grupo = response as Grupo
         return grupo
       })
@@ -110,25 +119,12 @@ export class GeralGruposService {
   return this.http.put<any>(`${this.gruposUrl}/${codigo}`, body, { headers } )
     .toPromise()
     .then(response => response)
-  } 
-
-  /*
-  atualizar(grupo: Grupo): Promise<Grupo> {
-    return this.http.put(`${this.gruposUrl}/${grupo.codigo}`, JSON.stringify(grupo))
-      .toPromise()
-      .then(response => 
-        response as Grupo
-      )
   }
 
-  buscarPeloCodigo(codigo: number): Promise<Grupo> {
-    return this.http.get(`${this.gruposUrl}/${codigo}`)
-      .toPromise()
-      .then(response => 
-        response as Grupo  
-      )
-  } */
 
- 
+  public pesquisaGrupos(termo: string): Observable<Grupo[]> {
+    return this.http.get<any>(`${this.gruposUrl}?nome=${termo}`)
+      .pipe((reposta: any) => reposta)
+  }
 
 }

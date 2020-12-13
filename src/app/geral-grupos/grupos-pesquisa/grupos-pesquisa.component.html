@@ -3,7 +3,7 @@
     <form autocomplete="off" (ngSubmit)="pesquisar()"> 
 
       <div class="p-col-12">
-        <h1>Grupos</h1>
+        <h1>Pesquisa de Grupos</h1>
       </div>
 
       <div class="p-col-12 p-fluid">
@@ -41,13 +41,16 @@
                     <td>{{ grupos.cidade?.nome }}/{{ grupos.cidade?.estado.sigla }}</td>
                     <!--td class="table-grupo-col-estado">{{ grupos.cidade?.estado.sigla }}</td-->
                     <td>
-                        <a style="margin-right: 10px;" href="#" pButton icon="pi pi-pencil"
+                        <a  class="p-button-sm  p-button-text"
+                            style="margin-right: 10px;" href="#" pButton icon="pi pi-pencil"
                             pTooltip="Atualizar" tooltipPosition="top"
                             [routerLink]="['/grupos', grupos.codigo]"
                             >
                         </a>
-                        <button pButton icon="pi pi-trash"
+                        <button class="p-button-danger  p-button-text  p-button-sm"
+                            pButton icon="pi pi-times"
                             pTooltip="Excluir" tooltipPosition="top"
+                            [disabled]="!auth.temPermissao('ROLE_REMOVER_GRUPO')"
                             (click)="confirmarExclusao(grupos)"
                            >
                         </button>

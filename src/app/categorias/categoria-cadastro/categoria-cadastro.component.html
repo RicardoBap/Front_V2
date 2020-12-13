@@ -44,13 +44,13 @@
             <td class="codigo-cell">{{categoria.codigo}}</td>
             <td>{{categoria.nome}}</td>
             <td style="text-align: center;">
-              <a class="p-button-outlined"
+              <a class="p-button-sm  p-button-text"
                 style="margin-right: 10px;" href="#" pButton icon="pi pi-pencil"
                 pTooltip="Atualizar" tooltipPosition="top"  (click)="buscarPeloCodigo(categoria.codigo)"
                 routerLink="/categorias/nova" >
             </a>
-              <button class="p-button-outlined"
-                pButton icon="pi pi-trash"
+              <button class="p-button-danger  p-button-text  p-button-sm"
+                pButton icon="pi pi-times"
                 pTooltip="Excluir" tooltipPosition="top"
                 [disabled]="!auth.temPermissao('ROLE_REMOVER_CATEGORIA')"
                 (click)="confirmarExclusao(categoria)"  >

@@ -84,11 +84,11 @@ export class CidadeCadastroComponent implements OnInit {
         this.cidade = cidade
 
         this.estadoSelecionado = (this.cidade) ? this.cidade.estado.codigo : null
+        
         if (this.estadoSelecionado) {
           this.carregarCidades()
-        }
-
-      this.atualizarTitulo() // <----- TITULO
+        }  
+        this.atualizarTitulo() // <----- TITULO    
       })
       .catch(erro => this.errorHandler.handle(erro))
   }

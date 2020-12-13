@@ -72,4 +72,25 @@ export class UsuariosPesquisaComponent implements OnInit {
       .catch(erro => this.errorHandler.handle(erro))
   }
 
+  alternarStatus(usuario: any): void {
+    const novoStatus = !usuario.ativo;
+
+    this.usuarioService.mudarStatus(usuario.codigo, novoStatus)
+      .then(() => {
+        const acao = novoStatus ? 'Usuario ativado para fazer login' : 'Usuario desativado para fazer login';
+
+        //pessoa.ativo = novoStatus
+        this.pesquisar()  //<-----------atualiza o status
+        if (this.grid.first === 0) {
+          this.pesquisar()
+        } else {
+          this.grid.first = 0
+        }
+
+        this.messageService.add
+          ({ summary: acao, severity: 'success', life: 3000 })
+      })
+      .catch(erro => this.errorHandler.handle(erro));
+  }
+
 } //FIM

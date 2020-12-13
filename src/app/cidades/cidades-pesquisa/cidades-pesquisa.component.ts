@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ConfirmationService, LazyLoadEvent, MessageService } from 'primeng/api';
 import { ErrorHandlerService } from 'src/app/core/error-handler.service';
 import { Cidade, Estado } from 'src/app/core/geral-grupos.model';
+import { AuthService } from 'src/app/seguranca/auth.service';
 import { CidadeFiltro, CidadeService } from '../cidade.service';
 
 @Component({
@@ -28,7 +29,8 @@ export class CidadesPesquisaComponent implements OnInit {
     private errorHandler: ErrorHandlerService,
     private confirmation: ConfirmationService,
     private messageService: MessageService,
-    private title: Title
+    private title: Title,
+    public auth: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -52,7 +54,7 @@ export class CidadesPesquisaComponent implements OnInit {
     this.filtro.pagina = pagina   
     this.cidadeService.pesquisar( this.filtro )
     .then(resultado => {
-      console.log(resultado)      
+      //console.log(resultado)      
       this.totalRegistros = resultado.total
       this.cidades = resultado.cidades           
     })
