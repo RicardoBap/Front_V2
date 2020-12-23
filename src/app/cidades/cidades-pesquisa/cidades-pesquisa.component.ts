@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+
 import { ConfirmationService, LazyLoadEvent, MessageService } from 'primeng/api';
+
 import { ErrorHandlerService } from 'src/app/core/error-handler.service';
-import { Cidade, Estado } from 'src/app/core/geral-grupos.model';
 import { AuthService } from 'src/app/seguranca/auth.service';
 import { CidadeFiltro, CidadeService } from '../cidade.service';
 

@@ -73,8 +73,8 @@ export class LancamentoCadastroComponent implements OnInit {
       .catch(erro => this.errorHandler.handle(erro))
   }
 
-  adicionarLancamento(lancamentoForm: NgForm) {
-    this.lancamentoService.adicionar(this.lancamento)
+  adicionarLancamento(lancamentoForm: NgForm) {    
+    this.lancamentoService.adicionar(this.lancamento)    
       .then(lancamentoAdicionado => {
         this.messageService.add(
           {severity:'success', summary:'Service Message', detail:'Lançamento adicionado com sucesso!'});

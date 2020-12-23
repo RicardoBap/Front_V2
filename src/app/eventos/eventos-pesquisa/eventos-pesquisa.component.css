@@ -24,8 +24,18 @@ img {
 }
 
 h2 {
-    color: #C00000;
+    color: #000000;
+    text-decoration: underline;
 }
+
+.fundo {
+    background: conic-gradient(#FFE0E0 40%, #E0E0FF 0); 
+}
+
+/*
+.botao {
+    background: #000 repeating-conic-gradient(hsla(0,0%,100%,.2) 0 15deg, hsla(0,0%,100%,0) 0 30deg);
+} */
 
 h3 {
     display: block;
@@ -35,4 +45,17 @@ h3 {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: bold;
+}
+
+/* ##############################################
+######### TITULO CADASTRO DE EVENTOS ############
+################################################# */
+
+h1 {
+    background: conic-gradient( #C00000 40%,  #0000C0 0 ); 
+    /* background: #0ac repeating-conic-gradient(hsla(0,0%,100%,.2) 0 15deg, hsla(0,0%,100%,0) 0 30deg); */
+    color: #FFF;
+    padding: 10px;
+    text-shadow: 2px 4px 2pxrgba(0,0,0,0.3);
+    text-align: center;
 }

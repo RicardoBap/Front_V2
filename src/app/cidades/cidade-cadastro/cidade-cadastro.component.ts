@@ -93,6 +93,7 @@ export class CidadeCadastroComponent implements OnInit {
       .catch(erro => this.errorHandler.handle(erro))
   }
 
+  
   carregarCidades() {
     //this.cidadeLoading = true 
     this.cidadeService.pesquisarCidades(this.estadoSelecionado)

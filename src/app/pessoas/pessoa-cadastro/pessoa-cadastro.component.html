@@ -11,8 +11,8 @@
 
       <div class="p-col-12  p-fluid">
         <label for="nome">Nome</label>
-        <input id="nome" class="form-control" type="text" pInputText
-               name="nome" ngModel #nome="ngModel"required minlength="5"
+        <input id="nome" class="form-control"  type="text"  pInputText
+               name="nome"  ngModel  #nome="ngModel"  required   minlength="5"
                [(ngModel)]="pessoa.nome" />
         <app-message [control]="nome" error="required" text="Informe o nome"></app-message>
         <app-message [control]="nome" error="minlength"  text="Você digitou apenas {{ nome.errors?.minlength?.actualLength }}."></app-message>

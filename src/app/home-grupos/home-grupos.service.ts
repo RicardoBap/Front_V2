@@ -4,8 +4,9 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, retry } from 'rxjs/operators';
 
-import { environment } from 'src/environments/environment.prod';
 import { Grupo } from '../core/geral-grupos.model';
+
+import { environment } from 'src/environments/environment.prod'; //<-- assim que estava
 
 
 @Injectable({

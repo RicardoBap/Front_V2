@@ -5,9 +5,10 @@
     </div>
 
     <hr />
-    <div class="p-col-12">
-    <div  *ngFor="let evento of eventos" > 
-        <div id="bloco" class="p-grid  p-ai-center  vertical-container">
+    <div class="p-col-12   fundo">
+    <div  *ngFor="let evento of eventos"  > 
+        
+        <div id="bloco" class="p-grid  p-ai-center  vertical-container ">
           
             <div  class="p-col-12  p-sm-5 p-lg-5"  >
                 <h2>{{ evento.tipoEvento }}</h2> 
@@ -15,25 +16,47 @@
                 <h3>Tema: <span>{{ evento.tema }}</span></h3>  
                 <h3>Palestrante: <span>{{ evento.palestrante }}</span></h3>                                 
             </div>        
-            <div class="p-col-12  p-sm-7  p-lg-7" >
+            <div class="p-col-12  p-sm-5  p-lg-5" >
                 <div  class="p-grid" >
                     <div class="p-col-12 ">
                         
                     </div>
                     <div class="p-col-12" >
-                        <h3>Local: <span>{{ evento.grupo }}</span></h3>
-                        <h3 style="margin-right: 30px;">Rua: <span>{{ evento.logradouro }},</span> nº <span>{{ evento.numero }}</span> - <span>{{ evento.bairro }}</span></h3>
-                        <h3><span>{{ evento.complemento }}</span></h3>     
-                        <h3><span>{{ evento.cidade }}/{{ evento.estado }} </span> </h3>                     
+                        <h3>Local: <span>{{ evento.grupo.nome }}</span></h3>
+                        <h3 style="margin-right: 30px;">Rua: <span>{{ evento.grupo.logradouro }},</span> nº <span>{{ evento.grupo.numero }}</span> - <span>{{ evento.grupo.bairro }}</span></h3>
+                        <h3><span>{{ evento.grupo.complemento }}</span></h3>     
+                        <h3><span>{{ evento.grupo.cidade.nome }}/{{ evento.grupo.cidade.estado.sigla }} </span> </h3>                     
                         
                     </div>
                 </div>                  
+            </div>
+            <div  class="p-col-12  p-sm-2  p-lg-2"  >
+                <div class="p-col-12">
+                    <a pButton class="p-button-outlined" type="button" label="Atualizar" 
+                        [routerLink]="['/eventos', evento.codigo]" > 
+                    </a>
+                </div>
+                <div class="p-col-12 ">
+                    <button pButton class="p-button-danger  p-button-outlined" type="button" 
+                    label="Remover" (click)="confirmarExclusao(evento)" 
+                    [disabled]="!auth.temPermissao('ROLE_REMOVER_EVENTO')">
+                    </button>       
+                </div>                     
             </div>      
         </div>
-        <hr/>
+        <hr/>            
     </div>
-    </div>
-    
 
+    <div class="p-col-12" >
+        <p-paginator [rows]="filtro.itensPorPagina" [totalRecords]="totalRegistros" #tabela
+            (onPageChange)="paginador($event)" >
+        </p-paginator>
+    </div>   
+       
+    <div class="p-col-12" style="margin-bottom: 100px">
+        <a pButton routerLink="/eventos/novo" label="Novo Evento" ></a>
+    </div>
+
+    </div> 
 
 </div>

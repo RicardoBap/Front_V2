@@ -8,9 +8,9 @@
         <div class="p-fluid p-formgrid p-grid">                  
 
             <div class="p-field p-col-12 p-sm-4">
-                <label for="estado">Estado</label> 
+                <label for="estado">Estado</label> <!-- (onChange)="carregarCidades()" -->
                 <p-dropdown id="estado" class="form-control" [options]="estados" placeholder="Selecione"
-                    name="estadoSelecionado"  [(ngModel)]="cidade.estado.codigo"  (onChange)="carregarCidades()"
+                    name="estadoSelecionado"  [(ngModel)]="cidade.estado.codigo"  
                     required  #estado="ngModel" > 
                 </p-dropdown>               
                 <small *ngIf="estado.valid && estado.touched" class="form-text  text-success">OK</small>

@@ -1,51 +1,85 @@
 <div class="container">
-
     <div class="p-col-12">
 
+        <form autocomplete="off" #eventoForm="ngForm" (ngSubmit)="salvar(eventoForm)" > 
+      
         <div class="p-grid">
 
             <div class="p-col-12">
-                <h1>Cadastro de eventos</h1>
+                <h1>{{ atualizando ? 'Atualização de' : 'Novo' }}  eventos</h1>
             </div>
 
             <div class="p-col-12  p-sm-4  p-fluid">
                 <label for="dataEvento">Data do evento</label>
-                <input id="dataEvento" class="form-control" type="date" pInputText  />                
+                <input id="dataEvento" class="form-control" type="date" pInputText 
+                    name="dataEvento" ngModel  #dataEvento="ngModel" [(ngModel)]="evento.dataEvento"  required /> 
+                <app-message [control]="dataEvento" error="required" text="Informe a data do evento"></app-message>          
             </div>
 
             <div class="p-col-12  p-sm-4  p-fluid">
                 <label for="horaEvento">Hora do evento</label>
-                <p-calendar  [timeOnly]="true" inputId="timeonly" placeholder="19:00"></p-calendar>
-                <!--input id="horaEvento" class="form-control" type="text" pInputText  /-->                
+                <p-inputMask id="horaEvento" class="form-control" 
+                    name="horaEvento" ngModel  #horaEvento="ngModel" [(ngModel)]="evento.horaEvento" mask="99:99" required >
+                </p-inputMask>
+                <app-message [control]="horaEvento" error="required" text="Informe a hora do evento"></app-message>                                                           
             </div>
 
             <div class="p-col-12  p-sm-4  p-fluid">
                 <label for="localEvento">Local do evento</label>               
-                <p-dropdown class="form-control"  placeholder="Selecione"  [options]="grupos" > 
-                </p-dropdown>                
+                <p-dropdown class="form-control"  placeholder="Selecione"  [options]="grupos" 
+                    name="grupo" ngModel  #grupo="ngModel"  [(ngModel)]="evento.grupo.codigo" required > 
+                </p-dropdown> 
+                <app-message [control]="grupo" error="required" text="Informe o local do evento"></app-message>              
             </div>
 
             <div class="p-col-12  p-sm-5  p-fluid">
                 <label for="tipoEvento">Tipo do evento</label>
-                <input id="tipoEvento" class="form-control" type="text" pInputText  />                
+                <input id="tipoEvento" class="form-control" type="text" pInputText 
+                    name="tipoEvento"  ngModel  #tipoEvento="ngModel"  [(ngModel)]="evento.tipoEvento" required  minlength="5" /> 
+                <app-message [control]="tipoEvento" error="required" text="Informe o tipo de evento"></app-message>  
+                <app-message [control]="tipoEvento" error="minlength"  text="Você digitou apenas {{ tipoEvento.errors?.minlength?.actualLength }}."></app-message>      
             </div>
 
             <div class="p-col-12  p-sm-6  p-fluid">
-                <label for="temaEvento">Tema do evento</label>
-                <input id="temaEvento" class="form-control" type="text" pInputText  />                
+                <label for="tema">Tema do evento</label>
+                <input id="tema" class="form-control" type="text" pInputText
+                    name="tema" ngModel  #tema="ngModel"  [(ngModel)]="evento.tema"  required  minlength="5"/>
+                <app-message [control]="tema" error="required" text="Informe o tema do evento"></app-message>  
+                <app-message [control]="tema" error="minlength"  text="Você digitou apenas {{ tema.errors?.minlength?.actualLength }}."></app-message>               
             </div>
 
             <div class="p-col-12  p-sm-4  p-fluid">
-                <label for="palestranteEvento">Palestrante do evento</label>
-                <input id="palestranteEvento" class="form-control" type="text" pInputText  />                
+                <label for="palestrante">Palestrante do evento</label>
+                <input id="palestrante" class="form-control" type="text" pInputText 
+                    name="palestrante"  ngModel  #palestrante="ngModel"  [(ngModel)]="evento.palestrante"  required  minlength="5"/>
+                <app-message [control]="palestrante" error="required" text="Informe o palestrante do evento"></app-message>  
+                <app-message [control]="palestrante" error="minlength"  text="Você digitou apenas {{ palestrante.errors?.minlength?.actualLength }}."></app-message>              
             </div>
 
             <div class="p-col-12  p-sm-2  p-fluid" id="destaque">
                 <label class="destaque" for="destaque">Destaque</label>
-                <p-toggleButton  onIcon="pi  ;pi-check" offIcon="pi  pi-times"></p-toggleButton>          
+                <p-toggleButton  onIcon="pi  ;pi-check" offIcon="pi  pi-times" 
+                    name="destaque"  ngModel  #destaque="ngModel"  [(ngModel)]="evento.destaque"
+                    pTooltip="Este campo true mostra evento na home" tooltipPosition="top"> 
+                </p-toggleButton>          
+            </div>
+
+            <div class="p-col-12  p-sm-4  p-fluid">
+                <label for="dataReferencia">Data referência</label>
+                <input id="dataReferencia" class="form-control" type="date" pInputText 
+                    name="dataReferencia" ngModel  #dataReferencia="ngModel" [(ngModel)]="evento.dataReferencia" 
+                    pTooltip="Este campo e destaque não nulo envia convite no e-mail" tooltipPosition="top" />          
             </div>
 
         </div>
+
+        <div class="p-col-12" style="margin-bottom: 100px" >
+            <button pButton type="submit" label="Salvar" style="margin-right: 10px;" [disabled]="!eventoForm.valid" ></button>
+            <button pButton type="button" label="Novo" class="p-button-secondary" (click)="novo(eventoForm)" ></button>
+            <a routerLink="/eventos" style="margin-left: 10px;">Voltar para pesquisa</a>
+        </div>
+
+        </form>
 
     </div>
 </div>

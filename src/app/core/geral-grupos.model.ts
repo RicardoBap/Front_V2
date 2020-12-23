@@ -1,3 +1,5 @@
+import { Time } from "@angular/common"
+
 export class Estado {
     codigo: number
     nome: string
@@ -52,4 +54,14 @@ export class Grupo {
     }
   }
 
- 
+  export class Evento {
+    codigo: number
+    dataEvento: Date
+    horaEvento: Time
+    grupo = new Grupo()
+    tipoEvento: string
+    tema: string
+    palestrante: string
+    destaque: boolean = true
+    dataReferencia: Date
+  }

@@ -22,7 +22,7 @@
       </div>
 
       <div class="p-col-12  p-sm-3 p-fluid">
-        <label for="dataPagamento">{{ tipo.value === 'RECEITA' ? 'Entrada' : 'Saída' }}</label>
+        <label for="dataPagamento">{{ tipo.value === 'RECEITA' ? 'Data de Recebimento' : 'Data de Pagamento' }}</label>
         <input id="dataPagamento" class="form-control" type="date" pInputText
                 name="dataPagamento" ngModel #dataPagamento="ngModel"
                 [(ngModel)]="lancamento.dataPagamento" />

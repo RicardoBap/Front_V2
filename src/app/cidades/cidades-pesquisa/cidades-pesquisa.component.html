@@ -45,8 +45,8 @@
             <ng-template pTemplate="body" let-cidade>
                 <tr>
                     <td style="text-align: center;">{{ cidade.codigo }}</td>                     
-                    <td>{{ cidade.cidade }}</td>
-                    <td>{{ cidade.estado }}</td>                    
+                    <td>{{ cidade.nome }}</td>
+                    <td>{{ cidade.estado.sigla }}</td>                    
                     <td>  
                         <a class="p-button-sm  p-button-text"
                             style="margin-right: 10px;" href="#" pButton icon="pi pi-pencil"

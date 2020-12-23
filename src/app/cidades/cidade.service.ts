@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 
 import { MoneyHttp } from '../seguranca/money-http';
 
-import { environment } from 'src/environments/environment.prod';
 import { Cidade } from '../core/geral-grupos.model';
 import { HttpParams } from '@angular/common/http';
+
+import { environment } from 'src/environments/environment.prod'; //<-- assim que estava
 
 export class CidadeFiltro {
   estado: string

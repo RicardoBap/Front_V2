@@ -2,11 +2,27 @@
 /* ###################################
 ########### EVENTOS ##################
 ###################################### */
-.titulo-evento {
-    text-align: center;
-   
-  }
-  
-  .titulo-h2 {
-    margin-block-start: 0;
-  }
+
+span {
+  font-weight: 400;
+}
+
+#bloco {
+  text-align: center;
+}
+
+h4 {
+  font-weight: 500;
+  margin-block-start: 0.3em;
+  margin-block-end: 0.3em;
+}
+
+hr {
+  margin-block-start: 0;
+  margin-block-end: 0.5;
+}
+
+.fundo {  
+  background: #E0E0FF repeating-conic-gradient(hsla(0,0%,100%,.2) 0 15deg, hsla(0,0%,100%,0) 0 50deg);
+}
+

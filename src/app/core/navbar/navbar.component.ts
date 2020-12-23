@@ -10,7 +10,6 @@ import { LogoutService } from './../../seguranca/logout.service';
 import { HomeGruposService } from 'src/app/home-grupos/home-grupos.service';
 import { Grupo } from '../geral-grupos.model';
 
-
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -18,7 +17,6 @@ import { Grupo } from '../geral-grupos.model';
   providers: [ HomeGruposService ]
 })
 export class NavbarComponent implements OnInit {
-
   
   //exibindoMenu: boolean
 
@@ -41,7 +39,7 @@ export class NavbarComponent implements OnInit {
     
     this.grupos = this.subjectPesquisa
       .pipe(        
-        debounceTime(2000),
+        debounceTime(1000),
         distinctUntilChanged(),
         switchMap((termo: string) => { 
           //console.log('requisicao http para a api')
@@ -59,7 +57,7 @@ export class NavbarComponent implements OnInit {
       this.grupos.subscribe((grupos: Grupo[]) => {
         this.grupos2 = grupos
         console.log(grupos)
-      }) */
+      }) */      
   } 
 
   public pesquisa(termoDaBusca: string): void {
