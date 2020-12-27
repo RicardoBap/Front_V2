@@ -17,17 +17,17 @@ export class HomeGruposService {
   gruposUrl: string
 
   constructor(private http: HttpClient) {
-      this.gruposUrl = `${environment.apiUrl}/grupos/nav-grupos`      
+      this.gruposUrl = `${environment.apiUrl}/grupos`      
      }
 
   public getGrupos(): Promise<Grupo[]> {
-    return this.http.get<any>(`${this.gruposUrl}?resumo&cidade=Campinas`) // apresenta apenas as cidadees de campinas
+    return this.http.get<any>(`${this.gruposUrl}/nav-grupos?resumo&cidade=Campinas`) // apresenta apenas as cidadees de campinas
       .toPromise()
       .then((resposta) => resposta)
   }
 
   public pesquisaGrupos(termo: string): Observable<Grupo[]> {
-    return this.http.get<any>(`${this.gruposUrl}?resumo&nome=${termo}`)
+    return this.http.get<any>(`${this.gruposUrl}/nav-grupos?resumo&nome=${termo}`)
     //.pipe((resposta: any) => resposta)    
     .pipe(
       retry(20),
@@ -36,7 +36,7 @@ export class HomeGruposService {
   }
 
   public getGrupoPeloCodigo(codigo: number) : Promise<Grupo[]> {
-    return this.http.get<any>(`http://localhost:8080/grupos/${codigo}`)
+    return this.http.get<any>(`${this.gruposUrl}/${codigo}`)  // http://localhost:8080/grupos/${codigo}
       .toPromise()
       .then((resposta: any) => {
         //console.log(resposta)

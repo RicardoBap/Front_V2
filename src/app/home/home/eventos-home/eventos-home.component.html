@@ -19,7 +19,7 @@
                         <h4>Local: <span>{{ evento.grupo.nome }}</span></h4>
                         <h4 style="margin-right: 30px;">Rua: <span>{{ evento.grupo.logradouro }},</span> nº <span>{{ evento.grupo.numero }}</span> - <span>{{ evento.grupo.bairro }}</span></h4>
                         <h4><span>{{ evento.grupo.complemento }}</span></h4>     
-                        <h4><span>{{ evento.grupo.cidade.nome }}/{{ evento.grupo.cidade.estado.sigla }} </span> </h4>                     
+                        <h4><span>{{ evento.grupo.cidade?.nome }}/{{ evento.grupo.cidade?.estado.sigla }} </span> </h4>                     
                         
                     </div>
                 </div>                  

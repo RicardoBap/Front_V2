@@ -16,7 +16,7 @@
 
 <!-- {{ grupos2 | json }} -->
 <div class="nav-pesquisa" *ngIf="!auth.temPermissao('ROLE_PESQUISAR_LANCAMENTO')">
-  <div class="container">
+  <div class="container p-col-12">
     
     <div class="p-grid">
       <div class="p-col-12 p-md-4 p-lg-4" style="text-align: center; margin-top: 20px;">
@@ -34,7 +34,7 @@
 
           <ul  class="list-group" >
             <li class="list-group-item" *ngFor="let grupo of grupos | async" > 
-              <a [routerLink]="[ '/nav-grupos', grupo.codigo ]" (click)="limpaPesquisa()">{{ grupo.nome | pesquisaReduzida:20:0 }}</a>
+              <a [routerLink]="[ 'nav-grupos', grupo.codigo ]" (click)="limpaPesquisa()">{{ grupo.nome | pesquisaReduzida:20:0 }}</a>
             </li>                   
           </ul>
                       

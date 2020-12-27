@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { EventoCadastroComponent } from '../eventos/evento-cadastro/evento-cadastro.component';
+
 import { EventosHomeComponent } from './home/eventos-home/eventos-home.component';
 
 import { HomeComponent } from './home/home.component';
