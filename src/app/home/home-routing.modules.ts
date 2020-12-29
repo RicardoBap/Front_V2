@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent, 
     children: [
       { path: '', component: EventosHomeComponent },
-      { path: 'eventos/nav-eventos', component: EventosHomeComponent }
+      { path: '/nav-eventos', component: EventosHomeComponent }
     ] }
 ];
 
