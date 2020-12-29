@@ -8,14 +8,14 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class HomeService {
 
-  eventosUrl: string
+  eventosHomeUrl: string
 
   constructor(private http: HttpClient) {
-    this.eventosUrl = `${environment.apiUrl}/home/nav-eventos`
+    this.eventosHomeUrl = `${environment.apiUrl}/home/nav-eventos`
    }
 
    public getEventos(): Promise<any[]> {
-    return this.http.get<any>(`${this.eventosUrl}?resumo&destaque=true`) // apresenta apenas as cidadees de campinas
+    return this.http.get<any>(`${this.eventosHomeUrl}?resumo&destaque=true`) // apresenta apenas os eventos na home
       .toPromise()
       .then((resposta) => resposta)
   }
