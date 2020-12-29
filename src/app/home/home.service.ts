@@ -11,7 +11,7 @@ export class HomeService {
   eventosUrl: string
 
   constructor(private http: HttpClient) {
-    this.eventosUrl = `${environment.apiUrl}/nav-eventos`
+    this.eventosUrl = `${environment.apiUrl}/home/nav-eventos`
    }
 
    public getEventos(): Promise<any[]> {
