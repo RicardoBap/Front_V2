@@ -27,7 +27,7 @@ export class HomeGruposService {
   }
 
   public pesquisaGrupos(termo: string): Observable<Grupo[]> {
-    return this.http.get<any>(`${this.gruposUrl}/nav-grupos?resumo&nome=${termo}`)
+    return this.http.get<any>(`${this.gruposUrl}/nav-grupos?resumo&nome=${termo}`)  // nome_like=
     //.pipe((resposta: any) => resposta)    
     .pipe(
       retry(20),

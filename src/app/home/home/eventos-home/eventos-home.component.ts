@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Evento } from 'src/app/core/geral-grupos.model';
 
 import { HomeService } from '../../home.service';
 
@@ -9,16 +11,33 @@ import { HomeService } from '../../home.service';
 })
 export class EventosHomeComponent implements OnInit {
 
-  eventos = []
+  public eventosHome: Evento[]
+  public eventos: Observable<any[]>
 
   constructor(private homeService: HomeService) { }
 
   ngOnInit(): void {
+    /*
     this.homeService.getEventos()
     .then((eventos: any[]) => {
       //console.log('navegacao-eventos.component', eventos)
       this.eventos = eventos
-    })
+    }) */
+
+    this.carregarEventos()
+   
+  }
+
+  carregarEventos() {
+    this.eventos = this.homeService.getEventos()
+    this.eventos.subscribe(
+      (eventos: Evento[]) => {
+        //console.log('carregarEventos', this.eventos) // <---- OK
+        this.eventosHome = eventos
+        //console.log('carregarEventosHome', this.eventosHome),
+        //err => console.log('Erro status', err.status),
+        //() => console.log('Fluxo de eventos completo!')
+      })
   }
 
 }
