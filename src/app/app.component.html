@@ -1,4 +1,6 @@
-<app-navbar *ngIf="exibindoNavBar()"></app-navbar>
+<app-navbar  *ngIf="auth.temPermissao('ROLE_PESQUISAR_LANCAMENTO')"></app-navbar> <!-- *ngIf="exibindoNavBar()"   -->
+<app-menu *ngIf="exibindoNavBar() && !auth.temPermissao('ROLE_PESQUISAR_LANCAMENTO')"></app-menu> 
+
 <router-outlet></router-outlet>
 
 <p-toast class="toast" position="bottom-right" [showTransformOptions]="'translateY(100%)'"></p-toast>

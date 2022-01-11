@@ -37,6 +37,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 //pipe
 import { PesquisaReduzida } from './../../app/core/util/pesquisa-reduzida.pipe';
 //import { HomeService } from '../home/home.service';
+import { MenuComponent } from './menu/menu.component';
 
 registerLocaleData(localePt)
 
@@ -46,7 +47,8 @@ registerLocaleData(localePt)
     FooterComponent,
     PaginaNaoEncontradaComponent,
     NaoAutorizadoComponent,
-    PesquisaReduzida
+    PesquisaReduzida,
+    MenuComponent
   ],
   imports: [
     CommonModule,
@@ -65,7 +67,8 @@ registerLocaleData(localePt)
     NavbarComponent,
     FooterComponent,
     ToastModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    MenuComponent
   ],
   providers: [
     ErrorHandlerService,
