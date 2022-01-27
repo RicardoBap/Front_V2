@@ -81,31 +81,31 @@ export class NavbarComponent implements OnInit {
         this.router.navigate([ '/home' ])
       })
       .catch(erro => this.errorHandler.handle(erro))
-  }
-
-  customOptions: any = {
-    loop: true,
-    margin: 0,
-    dots: false,
-    autoplay: true,
-    responsiveClass: true,
-    responsive: {
-      0: {
-       items: 1
-     },
-      400: {
-       items: 1
-     },
-      640: {
-       items: 1
-     },
-     1024: {
-       items: 1
-     }
-    }
-  };  
+  }  
 
 }
+
+// customOptions: any = {
+  //   loop: true,
+  //   margin: 0,
+  //   dots: false,
+  //   autoplay: true,
+  //   responsiveClass: true,
+  //   responsive: {
+  //     0: {
+  //      items: 1
+  //    },
+  //     400: {
+  //      items: 1
+  //    },
+  //     640: {
+  //      items: 1
+  //    },
+  //    1024: {
+  //      items: 1
+  //    }
+  //   }
+  // };  
 
 
 /*

@@ -1,4 +1,4 @@
-<div class="stick">
+<!-- <div class="stick">
   <div class="container">
     <div class="p-col-12 topo">
       <div class="p-grid  p-justify-between">
@@ -12,7 +12,7 @@
     </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- {{ grupos2 | json }} -->
 <div class="nav-pesquisa" *ngIf="!auth.temPermissao('ROLE_PESQUISAR_LANCAMENTO')">
@@ -46,38 +46,6 @@
 </div> 
 
 
-<!-- {{ grupos2 | json }} 
-<div class="nav-pesquisa" *ngIf="!auth.temPermissao('ROLE_PESQUISAR_LANCAMENTO')">
-  <div class="container">
-    <div class="p-col-12">
-
-    <div class="p-grid  p-justify-between">
-      <div class="p-col-2 p-sm-5 p-lg-7"></div> 
-
-      <div class="p-col-10 p-sm-7 p-lg-5  p-fluid   p-offset-0">
-
-        <div class="p-inputgroup  campo-pesquisa">
-          <input type="text" pInputText placeholder="Pesquise pelo nome do grupo"
-            #termoDaPesquisa (keyup)="pesquisa(termoDaPesquisa.value)">  
-
-          <span class="p-inputgroup-addon"><i class="pi  pi-search"></i></span>
-
-          <ul  class="list-group" >
-            <li class="list-group-item" *ngFor="let grupo of grupos | async" > 
-              <a [routerLink]="[ '/nav-grupos', grupo.codigo ]" (click)="limpaPesquisa()">{{ grupo.nome | pesquisaReduzida:20:0 }}</a>
-            </li>                   
-          </ul>
-                      
-        </div>
-
-      </div>
-      
-    </div>
-
-  </div>
-  </div>
-</div>  
--->
 
 <nav class="navbar">
   <div class="container">
@@ -87,7 +55,8 @@
           type="button" (click)="display = true" pButton icon="pi pi-bars" class="pi  p-button-sm" >
         </button>
       </li>
-      <li class="nav-item">
+
+      <!-- <li class="nav-item">
         <a class="nav-link" routerLinkActive="active" routerLink="/home">Home</a>
       </li>
       <li class="nav-item">
@@ -96,15 +65,14 @@
       
 
       <li class="nav-item">
-        <div class="dropdown"> <!-- class="dropbtn" -->
+        <div class="dropdown"> 
           <a  class="nav-link" routerLinkActive="active" >Sobre</a>
           <div class="dropdown-content">
             <a class="nav-link" routerLinkActive="active" routerLink="/salvavidas">Grupo Salva vidas</a>
-            <a class="nav-link" routerLinkActive="active" routerLink="/localizacao">Localização</a>
-            <!--a href="#">Link 3</a-->
+            <a class="nav-link" routerLinkActive="active" routerLink="/localizacao">Localização</a>            
           </div>
         </div>
-      </li>
+      </li> -->
 
     </ul>
   </div>
@@ -178,7 +146,7 @@
 
 
 
-<div class="banner" *ngIf="!auth.temPermissao('ROLE_PESQUISAR_LANCAMENTO')">
+<!-- <div class="banner" *ngIf="!auth.temPermissao('ROLE_PESQUISAR_LANCAMENTO')">
   <owl-carousel-o [options]="customOptions">
     <ng-template carouselSlide>
       <img src="../../../assets/banner2/banner.1.jpg" />
@@ -193,6 +161,5 @@
       <img src="../../../assets/banner2/banner.4.jpg" />
     </ng-template>
   </owl-carousel-o>
-
-</div>
+</div> -->
 

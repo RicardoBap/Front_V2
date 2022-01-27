@@ -1,5 +1,5 @@
-<app-navbar  *ngIf="auth.temPermissao('ROLE_PESQUISAR_LANCAMENTO')"></app-navbar> <!-- *ngIf="exibindoNavBar()"   -->
-<app-menu *ngIf="exibindoNavBar() && !auth.temPermissao('ROLE_PESQUISAR_LANCAMENTO')"></app-menu> 
+<app-navbar  *ngIf="exibindoMenu()"></app-navbar> <!-- *ngIf="exibindoNavBar()"   -->
+<app-menu *ngIf="exibindoNavBar() && !exibindoMenu()"></app-menu> 
 
 <router-outlet></router-outlet>
 

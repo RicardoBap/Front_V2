@@ -10,11 +10,15 @@ import { AuthService } from './seguranca/auth.service';
 })
 export class AppComponent {
 
-  constructor(private router: Router, public auth: AuthService) {
+  constructor(private router: Router, private auth: AuthService) {
   }
 
   exibindoNavBar() {
     return this.router.url !== '/login'
+  }
+
+  exibindoMenu() {
+    return this.auth.temPermissao('ROLE_PESQUISAR_LANCAMENTO')
   }
 
 }
