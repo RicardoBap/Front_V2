@@ -26,3 +26,29 @@ hr {
   background: #E0E0FF repeating-conic-gradient(hsla(0,0%,100%,.2) 0 15deg, hsla(0,0%,100%,0) 0 50deg);
 }
 
+
+/* ***************************** *\
+             LOADING
+\* ***************************** */
+.loading {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 8px;
+  animation: blink .9s ease-in-out infinite;
+}
+.triangle {
+  stroke-dasharray: 17;
+  animation: dash 3s cubic-bezier(0.35, 0.04, 0.63, 0.95) infinite;
+}
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 136;
+  }
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
