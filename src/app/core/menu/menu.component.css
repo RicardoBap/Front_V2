@@ -170,6 +170,11 @@ a:hover {
   margin-right: 48px;
 }
 
+.my-2 {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
 .py-3 {
   padding-top: 48px;
   padding-bottom: 48px;
