@@ -52,12 +52,7 @@ export class NavbarComponent implements OnInit {
       catchError((erro: Grupo[]) => {
         //console.log(erro)
         return of<Grupo[]>([])
-      }) 
-         /* utilizacao do pipe async
-      this.grupos.subscribe((grupos: Grupo[]) => {
-        this.grupos2 = grupos
-        console.log(grupos)
-      }) */      
+      })       
   } 
 
   public pesquisa(termoDaBusca: string): void {
@@ -84,52 +79,3 @@ export class NavbarComponent implements OnInit {
   }  
 
 }
-
-// customOptions: any = {
-  //   loop: true,
-  //   margin: 0,
-  //   dots: false,
-  //   autoplay: true,
-  //   responsiveClass: true,
-  //   responsive: {
-  //     0: {
-  //      items: 1
-  //    },
-  //     400: {
-  //      items: 1
-  //    },
-  //     640: {
-  //      items: 1
-  //    },
-  //    1024: {
-  //      items: 1
-  //    }
-  //   }
-  // };  
-
-
-/*
-  customOptions: OwlOptions = {
-    loop: true,
-    mouseDrag: false,
-    touchDrag: false,
-    pullDrag: false,
-    dots: false,
-    navSpeed: 10,
-    navText: ['', ''],
-    responsive: {
-      0: {
-        items: 1
-      },
-      400: {
-        items: 1
-      },
-      740: {
-        items: 1
-      },
-      940: {
-        items: 1
-      }
-    },
-    nav: true
-  } */

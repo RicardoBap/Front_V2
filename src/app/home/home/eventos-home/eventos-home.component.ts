@@ -17,15 +17,7 @@ export class EventosHomeComponent implements OnInit {
   constructor(private homeService: HomeService) { }
 
   ngOnInit(): void {
-    /*
-    this.homeService.getEventos()
-    .then((eventos: any[]) => {
-      //console.log('navegacao-eventos.component', eventos)
-      this.eventos = eventos
-    }) */
-
-    this.carregarEventos()
-   
+    this.carregarEventos()   
   }
 
   carregarEventos() {
