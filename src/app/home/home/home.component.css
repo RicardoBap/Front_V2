@@ -2,8 +2,6 @@
   background-color: #3A3633;
   height: auto;
   position: relative;
-  /*bottom: 125px; /* 120px */
-  /* opacity: 0.7; */
   z-index: 50;
 }
 
@@ -12,7 +10,6 @@
 }
 
 .centro {
-  /*border: 1px solid #000;*/
   height: 100px;
   margin: 0 auto;
   width: 250px;
@@ -22,7 +19,6 @@
 .snippet-middle {
 	background-color: #1B1444;
 	color:   #C1E4FF;
-  /*border: 1px solid #000; */
 	height: 130px;
 	padding: 10px;
 	width: 250px;
@@ -30,7 +26,6 @@
 	font-size: 14px;
 	position: relative;
 	bottom: 15px;
-  /*box-shadow: -3px 3px 10px #606060, 1px 3px 3px #606060; /*,  -10px 0 1em #000;  */
   z-index: 50;
 }
 
@@ -76,7 +71,6 @@
 }
 
 .section:hover {
-  /* border-color: #606060 #3A3633 #3a3633 #606060; */
   border-color: #606060 #3A3633 #3a3633 #606060;
   box-shadow: 0 0 10px #606060;
 }
@@ -109,25 +103,67 @@
   clear: both;
   }
 
+
 /* Conteudo do preambulo */
-.preambulo {
-  text-align: justify;
-  line-height: 1.6;
-  font-weight: 600;
+h5 {
+  text-transform: uppercase;
+  background: linear-gradient(220.94deg, #2F4B9A 14.43%, #7387C1 85.23%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 18px;
+  line-height: 140%;
+}
+
+@media screen and (max-width: 960px) {
+  h5 {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+  }
+}
+.preambulo {
+  color: #656566;
+  font-family: 'Rubik', sans-serif;
+  text-align: justify;
+  line-height: 140%;
+  font-size: 16px;
+}
+@media screen and (max-width: 960px) {
+  .preambulo {
+    font-family: 'Rubik', sans-serif;;
+    font-size: 14px;
+    line-height: 150%;
+  }
+}
+strong {
+  color: #161617;
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+  line-height: 140%;
+}
+
+@media screen and (max-width: 960px) {
+  strong {
+    font-family: 'Rubik', sans-serif;
+    font-size: 14px;
+    line-height: 150%;
+  }
 }
 
 /* DESTACA A PRIMEIrA LETRA DO PRAMBULO */
-i {
+/* i {
   font-size: 24px;
   font-weight: 700;
   color: #000;
-}
+} */
 /* Tira o espacamento automatico */
-p {
+/* p {
   margin-block-start: 0 !important;
   margin-block-end: 0 !important;
-}
+} */
 
 /* preambulo */
 h3 {
@@ -200,30 +236,32 @@ h3 {
   opacity: 0.9;
 }
 
-/* ------------< LINHA >------------- */
+
+/* ***************************** *\
+           LINHA HR
+\* ***************************** */
 hr {
   height: 10px;
-  background-color: #C00000;
+  background-color: #FBBC22;
+  border: none;
 }
 
-/* #############################################
-############## TITULO EVENTO ###################
-################################################ */
-.titulo-evento {
+
+/* ***************************** *\
+          TITULO EVENTO
+\* ***************************** */
+.titulo-h2  {
   text-align: center;
-  /*background: #0000C0 repeating-conic-gradient(hsla(0,0%,100%,.2) 0 15deg, hsla(0,0%,100%,0) 0 30deg); */ 
- 
-  color: #FFF !important;
-  font-weight: 800 !important;
-  text-shadow: 0 0 20px #fff, 0 -5px 20px #fff,
-               0 5px 20px #fff;  
+  color: #101215;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 52px;
+  line-height: 110%;
 }
 
-h2 {
-  margin-block-end: 0.5em;
-  text-align: center;
-}
-
-.titulo-h2 {
-  margin-block-start: 0;
+@media screen and (max-width: 960px) {
+  .titulo-h2  {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 36px;
+    line-height: 120%;
+  }
 }
