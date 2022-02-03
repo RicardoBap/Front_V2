@@ -1,5 +1,5 @@
 .tres-snippets {
-  background-color: #3A3633;
+  background-color: #1A2C5F;
   height: auto;
   position: relative;
   z-index: 50;
@@ -17,7 +17,7 @@
 }
 
 .snippet-middle {
-	background-color: #1B1444;
+	background-color: #080F22;
 	color:   #C1E4FF;
 	height: 130px;
 	padding: 10px;
@@ -33,35 +33,49 @@
   width: 0;
   border-left: 125px solid transparent;
   border-right: 125px solid transparent;
-  border-top: 30px solid #1B1444;
+  border-top: 30px solid #1A2C5F;
 
   filter: drop-shadow(3px 3px 3px rgba(0,0,0,1));
   position: relative;
   bottom: 15px;
 }
-/* icone de maos dadas */
-.icon-help img {
-  text-align: center;
-  width: 50px;
-  height: 50px;
-}
 
-/* snippet central luminoso */
-.snippet-middle h2:hover {
-	color: #FFF !important;
+
+/* ***************************** *\
+        icone de maos dadas
+\* ***************************** */
+.snippet .snippet-middle:hover {
+	color: #F2F4FB !important;
 	font-weight: 800 !important;
-  text-shadow: 0 0 20px #fff, 0 -5px 20px #fff,
-               0 5px 20px #fff;
-} 
-
-/* ---------------< Body >-------------- */
-/* -----------< H1 titulo >---------- */
-.bem-vindo {
-  font-family: 'Damion', cursive;
-  font-size: 46px;
-  color: #74B4F4;;
-  text-align: center;
+  text-shadow: 0 0 20px #FAFBFE;
 }
+.snippet .snippet-middle:hover .icon-help svg {
+  filter: drop-shadow(0px 0px 60px rgb(250, 251, 254))
+    drop-shadow(0px 0px 50px rgb(242, 244, 251))
+    drop-shadow(0px 0px 30px rgb(234, 238, 248))
+    drop-shadow(0px 0px 30px rgb(210, 214, 224));
+}
+
+
+/* ***************************** *\
+         BODY - H1 TITULO
+\* ***************************** */
+.bem-vindo {
+  text-align: center;
+  color: #7387C1;
+  font-family: 'Damion', cursive;
+  font-size: 64px;
+  line-height: 72px;
+}
+
+@media screen and (max-width: 960px) {
+  .bem-vindo {
+    font-family: 'Damion', cursive;
+    font-size: 36px;
+    line-height: 42px;
+  }
+}
+
 
 /* --------< BORDA > --------- */
 .section {
@@ -78,7 +92,7 @@
 .section:hover .pi {
   margin-right: 20px;
   transition: 2s;
-  color: #006ACB;
+  color: #2F4B9A;
   opacity: 0.9;
 }
 
@@ -153,20 +167,10 @@ strong {
   }
 }
 
-/* DESTACA A PRIMEIrA LETRA DO PRAMBULO */
-/* i {
-  font-size: 24px;
-  font-weight: 700;
-  color: #000;
-} */
-/* Tira o espacamento automatico */
-/* p {
-  margin-block-start: 0 !important;
-  margin-block-end: 0 !important;
-} */
+
 
 /* preambulo */
-h3 {
+/* h3 {
   color: #C00000;
   text-transform: uppercase;
   margin-bottom: 0;
@@ -178,6 +182,25 @@ h3 {
     text-align: center;
     margin-top: 0;
     margin-bottom: 10px;
+} */
+h3 {
+  text-transform: uppercase;
+  background: linear-gradient(220.94deg, #2F4B9A 14.43%, #7387C1 85.23%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 18px;
+  line-height: 140%;
+}
+
+@media screen and (max-width: 960px) {
+  h3 {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+  }
 }
 /*############################ */
 .section a {
@@ -232,7 +255,7 @@ h3 {
 .section-revista:hover .pi {
   margin-right: 20px;
   transition: 2s;
-  color: #006ACB;
+  color: #2F4B9A;
   opacity: 0.9;
 }
 
@@ -242,7 +265,7 @@ h3 {
 \* ***************************** */
 hr {
   height: 10px;
-  background-color: #FBBC22;
+  background-color: #2F4B9A;
   border: none;
 }
 
