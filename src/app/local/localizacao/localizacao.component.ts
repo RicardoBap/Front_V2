@@ -9,7 +9,7 @@ import { Title } from '@angular/platform-browser';
     <div class="ui-g">
 
       <div class="p-col-12">
-        <h1>Localização</h1>
+        <h1 style="margin-top: 80px;">Localização</h1>
       </div>
 
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5196.925233067139!2d-47.08195156929406!3d-22.921444448418516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8c91103ac1d29%3A0x7a66d2f5f456dd31!2sAlcoolicos%20Anonimos%20-%20Grupo%20Salva%20vidas!5e0!3m2!1spt-BR!2sbr!4v1602781151112!5m2!1spt-BR!2sbr"

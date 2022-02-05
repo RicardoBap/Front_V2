@@ -5,7 +5,7 @@
           box-sizing: border-box;
 }
 
-.bloco {
+/* .bloco {
   max-width: 1440px;
   margin: 0 auto;
   padding: 96px 24px;
@@ -68,15 +68,15 @@ hero {
   hero {
     height: auto;
   }
-}
+} */
 
-.bg-home {
+/* .bg-home {
   width: 100%;
   height: 100%;
   overflow: hidden;
   position: absolute;
   z-index: -1;
-}
+} */
 
 .svg-bg-home {
   width: 120%;
@@ -88,7 +88,7 @@ hero {
   }
 }
 
-h1 {
+/* h1 {
   color: #101215;
   font-family: 'Fira Sans', sans-serif;
   font-size: 64px;
@@ -116,7 +116,7 @@ p {
     font-size: 14px;
     line-height: 150%;
   }
-}
+} */
 
 
 
@@ -170,7 +170,7 @@ a:hover {
   margin-right: 48px;
 }
 
-.my-2 {
+/* .my-2 {
   margin-top: 16px;
   margin-bottom: 16px;
 }
@@ -188,7 +188,7 @@ a:hover {
 .py-5 {
   padding-top: 128px;
   padding-bottom: 128px;
-}
+} */
 
 html {
   scroll-behavior: smooth;
@@ -567,7 +567,7 @@ header {
           filter: drop-shadow(0px 16px 32px rgba(47, 75, 154, 0.5));
 }
 
-.div-card {
+/* .div-card {
   -webkit-perspective: 500px;
           perspective: 500px;
   position: relative;
@@ -811,5 +811,5 @@ header {
     -webkit-transform: translate3d(0, 30px, 0);
             transform: translate3d(0, 30px, 0);
   }
-}
+} */
 /*# sourceMappingURL=style.css.map */
