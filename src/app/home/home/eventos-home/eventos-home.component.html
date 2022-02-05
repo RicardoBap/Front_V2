@@ -15,10 +15,10 @@
         <div id="bloco" class="p-grid  p-ai-center   " >
           
             <div  class="p-col-12  p-sm-5  p-lg-5"  >
-                <h2>{{ evento.tipoEvento }}</h2> 
-                <h4>Data: <span>{{ evento.dataHoraEvento | date: 'dd/MM/yyyy - HH:mm' }} horas</span></h4> 
-                <h4>Tema: <span>{{ evento.tema }}</span></h4>  
-                <h4>Palestrante: <span>{{ evento.palestrante }}</span></h4>                                 
+                <h4>{{ evento.tipoEvento }}</h4> 
+                <p>Data: {{ evento.dataHoraEvento | date: 'dd/MM/yyyy - HH:mm' }} horas</p> 
+                <p>Tema: {{ evento.tema }}</p>  
+                <p>Palestrante: {{ evento.palestrante }}</p>                                 
             </div>
 
             <div class="p-col-12  p-sm-7  p-lg-7" >
@@ -27,10 +27,10 @@
                         
                     </div>
                     <div class="p-col-12" >
-                        <h4>Local: <span>{{ evento.grupo.nome }}</span></h4>
-                        <h4 style="margin-right: 30px;">Rua: <span>{{ evento.grupo.logradouro }},</span> nº <span>{{ evento.grupo.numero }}</span> - <span>{{ evento.grupo.bairro }}</span></h4>
-                        <h4><span>{{ evento.grupo.complemento }}</span></h4>     
-                        <h4><span>{{ evento.grupo.cidade?.nome }}/{{ evento.grupo.cidade?.estado.sigla }} </span> </h4>                     
+                        <p>Local: {{ evento.grupo.nome }}</p>
+                        <p style="margin-right: 30px;">Rua:  {{ evento.grupo.logradouro }}, nº {{ evento.grupo.numero }} - {{ evento.grupo.bairro }}</p>
+                        <p>{{ evento.grupo.complemento }}</p>     
+                        <p>{{ evento.grupo.cidade?.nome }} / {{ evento.grupo.cidade?.estado.sigla }}</p>                     
                         
                     </div>
                 </div>                  

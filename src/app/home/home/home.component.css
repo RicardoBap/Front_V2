@@ -40,6 +40,10 @@
   bottom: 15px;
 }
 
+.font-snippet {
+  font-family: 'Fira Sans', sans-serif;
+}
+
 
 /* ***************************** *\
         icone de maos dadas
@@ -76,6 +80,13 @@
   }
 }
 
+
+/* ***************************** *\
+         CAIXA - H2 TITULO
+\* ***************************** */
+.text-end {
+  text-align: end;
+}
 
 /* --------< BORDA > --------- */
 .section {
