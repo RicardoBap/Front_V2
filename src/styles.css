@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #404C51;
   display: block;
-  /* background: #E0E0FF url(./assets/noise.png); */
+  background: #f2f4fb;
 }
 
 label {

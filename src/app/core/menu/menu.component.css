@@ -223,7 +223,7 @@ header {
 }
 
 .active-header {
-  background-color: #F2F4FB;
+  background-color: #FFF;
   -webkit-box-shadow: 0px 51px 80px rgba(47, 75, 154, 0.08), 0px 15.375px 24.1177px rgba(47, 75, 154, 0.0521271), 0px 6.38599px 10.0172px rgba(47, 75, 154, 0.04), 0px 2.30969px 3.62304px rgba(47, 75, 154, 0.0278729);
           box-shadow: 0px 51px 80px rgba(47, 75, 154, 0.08), 0px 15.375px 24.1177px rgba(47, 75, 154, 0.0521271), 0px 6.38599px 10.0172px rgba(47, 75, 154, 0.04), 0px 2.30969px 3.62304px rgba(47, 75, 154, 0.0278729);
 }
