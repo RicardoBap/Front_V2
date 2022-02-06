@@ -1,3 +1,81 @@
+/* ************************************ *\
+                TITULO
+\* ************************************ */
+h3 {
+    color: #101215;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 36px;
+    line-height: 120%;
+}
+
+@media screen and (max-width: 960px) {
+    h3 {
+      font-family: 'Fira Sans', sans-serif;
+      font-size: 24px;
+      line-height: 120%;
+    }
+}
+  
+/* ************************************ *\
+               SUB-TITULO
+\* ************************************ */
+h4 {
+    color: #101215;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 24px;
+    line-height: 130%;
+}
+  
+@media screen and (max-width: 960px) {
+    h4 {
+      font-family: 'Firas Sans', sans-serif;
+      font-size: 18px;
+      line-height: 130%;
+    }
+}
+
+/* ***************************** *\
+          NOME DOS GRUPOS
+\* ***************************** */
+h5 {
+    text-transform: uppercase;
+    background: linear-gradient(220.94deg, #2F4B9A 14.43%, #7387C1 85.23%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 18px;
+    line-height: 140%;
+}
+  
+@media screen and (max-width: 960px) {
+    h5 {
+      font-family: 'Fira Sans', sans-serif;
+      font-size: 16px;
+      line-height: 150%;
+    }
+}
+
+/* ********************************** *\
+            DADOS DOS GRUPOS
+\* ********************************** */
+p {
+    color: #868587;
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+    line-height: 140%;
+    font-size: 16px;
+}
+@media screen and (max-width: 960px) {
+    p {
+      font-family: 'Rubik', sans-serif;;
+      font-size: 14px;
+      line-height: 150%;
+    }
+}
+
+
 .secao {
     text-align: center;
 }
@@ -6,12 +84,10 @@
     text-align: center;
 }
 
-h3 {
-    font-weight: 500;
-}
 
 span {
-    font-weight: 400;
+    font-weight: bold;
+    color: #353436;
 }
 
 #bloco {
@@ -23,17 +99,10 @@ img {
     height: 226px;
 }
 
-h2 {
-    color: #828282;
-}
-
-h3 {
-    display: block;
-    font-size: 1.17em;
-    margin-block-start: 0.2em;
-    margin-block-end: 0.2em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;
+/* ***************************** *\
+               HR
+\* ***************************** */
+hr {
+    background-color: #1A2C5F;
 }
 

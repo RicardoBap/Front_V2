@@ -9,18 +9,67 @@ import { Title } from '@angular/platform-browser';
     <div class="ui-g">
 
       <div class="p-col-12">
-        <h1 style="margin-top: 132px;">Localização</h1>
+        <h3 style="margin-top: 80px;">Localização</h3>
       </div>
 
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5196.925233067139!2d-47.08195156929406!3d-22.921444448418516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8c91103ac1d29%3A0x7a66d2f5f456dd31!2sAlcoolicos%20Anonimos%20-%20Grupo%20Salva%20vidas!5e0!3m2!1spt-BR!2sbr!4v1602781151112!5m2!1spt-BR!2sbr"
-        width="1200" height="400"
+      <!-- width="1200" height="400" -->
+      <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5196.925233067139!2d-47.08195156929406!3d-22.921444448418516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8c91103ac1d29%3A0x7a66d2f5f456dd31!2sAlcoolicos%20Anonimos%20-%20Grupo%20Salva%20vidas!5e0!3m2!1spt-BR!2sbr!4v1602781151112!5m2!1spt-BR!2sbr"
+        
         frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
       </iframe>
 
     </div>
   </div>
   <app-rodape></app-rodape>
+  `,
+  styles: [`
+   h3 {
+    color: #101215;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 36px;
+    line-height: 120%;
+  }
+
+  @media screen and (max-width: 960px) {
+    h3 {
+      font-family: 'Fira Sans', sans-serif;
+      font-size: 24px;
+      line-height: 120%;
+    }
+  }
+
+  iframe {
+    width: 1200px;
+    height: 70vh;
+    margin-bottom: 128px;   
+  }
+  @media screen and (max-width: 960px) {
+    iframe {
+      max-width: 720px;
+    }
+  }
+  @media screen and (max-width: 720px) {
+    iframe {
+      max-width: 480px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    iframe {
+      max-width: 420px;
+    }
+  }
+  @media screen and (max-width: 420px) {
+    iframe {
+      max-width: 400px;
+    }
+  }
+  @media screen and (max-width: 320px) {
+    iframe {
+      max-width: 280px;
+    }
+  }
   `
+  ] 
 })
 export class LocalizacaoComponent implements OnInit {
 
@@ -31,9 +80,3 @@ export class LocalizacaoComponent implements OnInit {
   }
 
 }
-/*
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10393.682760468748!2d-47.087113120913564!3d-22.923630599128405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8c88bd87e3735%3A0x8b06d57bc5802aae!2sGrupo%20Nova%20Vis%C3%A3o%20NA!5e0!3m2!1spt-PT!2sbr!4v1602416149278!5m2!1spt-PT!2sbr"
-width="1200" height="400"
-frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
-</iframe>
-*/

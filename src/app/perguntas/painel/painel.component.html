@@ -3,7 +3,7 @@
   <form autocomplete="off" #painelForm="ngForm" (ngSubmit)="verificarResposta(painelForm)">
 
     <div class="p-col-12">
-      <h1 style="margin-top: 132px;">Você deve procurar o A.A.?</h1>
+      <h3 style="margin-top: 132px;">Você deve procurar o A.A.?</h3>
     </div>
 
 
@@ -12,14 +12,14 @@
         <div class="p-col-12 p-sm-8">
 
           <div class="painel">
-            <h3>{{ titulo }}"</h3>
+            <h4>{{ titulo }}"</h4>
 
             <div class="p-col-12">
               <app-progresso [progresso]="progresso" ></app-progresso>
             </div>
 
             <div class="p-col-12">
-              <p>{{ rodadaFrase.perg }}</p>
+              <p class="texto" style="padding: 0 20px;">{{ rodadaFrase.perg }}</p>
               <div class="card">
                 <div class="alert  alert-info" role="alert" >
                   {{ rodadaFrase.resp }}
@@ -46,7 +46,7 @@
               </div>
             </div>
 
-            <div class="p-col-12" id="botao">
+            <div class="p-col-12" id="botao">    
               <button pButton type="submit" label="Avançar" class=".ui-button-info"
                 [disabled]="!painelForm.valid">
               </button>
@@ -57,12 +57,19 @@
 
         <div class="p-col-12  p-sm-4">
           <div class="painel">
-            <p class="intro">Doze perguntas que somente você pode responder.</p>
-            <p class="intro">Você deve procurar o A.A.?</p>
-            <p class="intro">Somente você poderá decidir se o programa de recuperação de A.A. pode ajudá-lo.</p>
-            <p class="intro">Nós, que estamos hoje em A.A., viemos porque finalmente desistimos de controlar nossa maneira de beber. Nós ainda detestávamos admitir que nunca poderíamos beber normalmente. Então ouvimos de outros membros de A.A. que estávamos doentes, (Nós pensamos assim durante anos!). Descobrimos que muitas pessoas apresentavam os mesmos sentimentos de culpa, solidão e desespero que nós tínhamos. Descobrimos que tínhamos estes sentimentos por sermos portadores da doença do alcoolismo.</p>
-            <p class="intro">Decidimos encarar o que o álcool havia feito conosco. </p>
-            <p class="intro">Aqui estão algumas perguntas que tentamos responder honestamente. Se respondermos "SIM" para quatro ou mais questões, estamos com sérios problemas com a nossa maneira de beber. Veja o resultado. Lembre-se, não há nenhuma vergonha em encarar o fato de que você tem um problema.</p>
+            <p class="texto">
+              Doze perguntas que somente você pode responder.
+              <br><br>
+              Você deve procurar o A.A.?
+              <br><br>         
+              Somente você poderá decidir se o programa de recuperação de A.A. pode ajudá-lo.
+              <br><br>
+              Nós, que estamos hoje em A.A., viemos porque finalmente desistimos de controlar nossa maneira de beber. Nós ainda detestávamos admitir que nunca poderíamos beber normalmente. Então ouvimos de outros membros de A.A. que estávamos doentes, (Nós pensamos assim durante anos!). Descobrimos que muitas pessoas apresentavam os mesmos sentimentos de culpa, solidão e desespero que nós tínhamos. Descobrimos que tínhamos estes sentimentos por sermos portadores da doença do alcoolismo.
+              <br><br>
+              Decidimos encarar o que o álcool havia feito conosco.
+              <br><br>
+              Aqui estão algumas perguntas que tentamos responder honestamente. Se respondermos "SIM" para quatro ou mais questões, estamos com sérios problemas com a nossa maneira de beber. Veja o resultado. Lembre-se, não há nenhuma vergonha em encarar o fato de que você tem um problema.
+            </p>           
           </div>
         </div>
 

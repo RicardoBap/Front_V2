@@ -1,7 +1,54 @@
-/* --- TITULO --- */
+/* ************************************ *\
+                TITULO
+\* ************************************ */
+h3 {
+  color: #101215;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 36px;
+  line-height: 120%;
+}
+
+@media screen and (max-width: 960px) {
+  h3 {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 24px;
+    line-height: 120%;
+  }
+}
+
+
 
 /* -------------------< passos > ------------- */
-.titulo strong {
+.titulo {
+  color: #555456;
+  font-family: 'Rubik', sans-serif;
+  text-align: justify;
+  line-height: 140%;
+  font-size: 16px;
+}
+@media screen and (max-width: 960px) {
+  .titulo {
+    font-family: 'Rubik', sans-serif;;
+    font-size: 14px;
+    line-height: 150%;
+  }
+}
+strong {
+  color: #161617;
+  font-family: 'Rubik', sans-serif;
+  font-size: 16px;
+  line-height: 140%;
+}
+
+@media screen and (max-width: 960px) {
+  strong {
+    font-family: 'Rubik', sans-serif;
+    font-size: 14px;
+    line-height: 150%;
+  }
+}
+
+/* .titulo strong {
   font-size: 16px;
   color: #C00000;
 }
@@ -9,45 +56,93 @@
 .titulo {
   text-align: justify;
   font-weight: 600;
-}
+} */
 
-.content p {
+/* .content p {
   font-family: 'Kalam', cursive;
   font-size: 18px;
   text-align: justify;
   font-weight: 600;
   color: #0000C0;
+} */
+.content p {
+  color: #868587;
+  font-family: 'Rubik', sans-serif;
+  text-align: justify;
+  line-height: 140%;
+  font-size: 16px;
 }
-
+@media screen and (max-width: 960px) {
+  .content p {
+    font-family: 'Rubik', sans-serif;;
+    font-size: 14px;
+    line-height: 150%;
+  }
+}
 /* --------< Imagem >---------- */
 .figure {
 	position: relative;
 }
 
 img {
+  margin-top: 10px;
 	display: block;
 }
 
-h3 {
+/* h5 {
 	text-align: center;
+} */
+/* ******************************* *\
+            FIGCAPTION
+\* ******************************* */
+ h5 {
+   text-align: center;
+  text-transform: uppercase;
+  background: linear-gradient(220.94deg, #fbbc22 14.43%, #ffd45e 85.23%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 18px;
+  line-height: 140%;
 }
 
-p {
-	text-align: center;
+@media screen and (max-width: 960px) {
+  h5 {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+  }
 }
 
+figcaption p {
+  color: #FAFBFE;
+  font-family: 'Rubik', sans-serif;
+  text-align: center;
+  line-height: 140%;
+  font-size: 16px;
+}
+@media screen and (max-width: 960px) {
+  figcaption p {
+    font-family: 'Rubik', sans-serif;;
+    font-size: 14px;
+    line-height: 150%;
+  }
+}
+
+/* POSIÇÃO EM RELAÇÃO A IMAGEM*/
 figcaption {
-	bottom: 330px;
+	bottom: 280px;
 	margin: 0 10px;
 	padding: 5px;
 	position: absolute;
 	width: 320px;
 }
 
+/* COR E TRANSPARENCIA DO FUNDO*/
 figcaption {
-	background-color: #000;
 	background-color: rgba(0,0,0,0.3);
-	color: #FFF;
 }
 
 @media only screen

@@ -1,22 +1,83 @@
-p {
-  font-weight: 600;
-  font-size: 16px;
-  color:  #0000C0 ;
-  /*padding-left: 20px; */
+/* ************************************ *\
+                TITULO
+\* ************************************ */
+h3 {
+  color: #101215;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 36px;
+  line-height: 120%;
 }
 
-.alert {
+@media screen and (max-width: 960px) {
+  h3 {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 24px;
+    line-height: 120%;
+  }
+}
+
+/* ************************************ *\
+                SUB-TITULO
+\* ************************************ */
+h4 {
+  color: #101215;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 24px;
+  line-height: 130%;
+}
+
+@media screen and (max-width: 960px) {
+  h4 {
+    font-family: 'Firas Sans', sans-serif;
+    font-size: 18px;
+    line-height: 130%;
+  }
+}
+
+/* ******************************* *\
+                TEXTO
+\* ******************************* */
+.texto {
+  color: #454446;
+  font-family: 'Rubik', sans-serif;
   text-align: justify;
   font-size: 16px;
-  font-weight: 600;
-  color: #C00000;
+  line-height: 140%;
+}
+
+@media screen and (max-width: 960px) {
+  .texto {
+    font-family: 'Rubik', sans-serif;
+    font-size: 14px;
+    line-height: 150%;
+  }
+}
+
+
+/* ********************************* *\
+             RESPOSTAS
+\* ********************************* */
+.alert {
+  color: #D2D6E0;
+  font-family: 'Rubik', sans-serif;
+  text-align: justify;
+  font-size: 16px;
+  line-height: 140%;
+}
+
+@media screen and (max-width: 960px) {
+  .alert {
+    font-family: 'Rubik', sans-serif;
+    font-size: 14px;
+    line-height: 150%;
+  }
 }
 
 .card {
-  background-color:#ffE0E0;
+  background-color:#080F22;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 5px 5px 5px #f09898;
+  box-shadow: 5px 5px 5px #ccc;
 }
 
 .d-flex {
@@ -34,10 +95,11 @@ p {
 }
 
 
-/* ------------------------------------------- */
-
+/* ******************************************* *\
+                    PAINEL
+\* ******************************************* */
 .painel {
-  background-color: #FFF;
+  background-color: #FAFBFE;
 	border: 1px solid #CCC;
   border-color: #CCC #999 #999 #CCC;
   border-radius: 10px;
@@ -45,27 +107,28 @@ p {
 	padding: 10px;
 }
 
-.painel h3 {
-	border-bottom: 1px dashed #C00000;
-  margin: 0;
+.painel h4 {
+  padding: 16px;
+	border-bottom: 1px dashed #1A2C5F;
+	margin: 0;
 }
 
+
+/* ********************************** *\
+            BOTAO AVANÇAR
+\* ********************************** */
 #botao {
   text-align: right
 }
 
-.intro {
-  color: #606060;
-  font-size: 14px;
-  text-align: justify;
-  text-indent: 3ch;
-  margin-top: 0;
-  /*margin-block-start: 0 !important;*/
-  margin-block-end: 0 !important;
-}
 
+/* ************************* *\
+            ICONES
+\* ************************* */
 .icon-ok {
-	color: #489D00;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 16px;
+	color: #3a6332;
 }
 
 .icon-ok::before {
@@ -74,7 +137,9 @@ p {
 }
 
 .icon-invalid {
-	color: #990000;
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 16px;
+	color: #7b0000;
 }
 
 .icon-invalid::before {

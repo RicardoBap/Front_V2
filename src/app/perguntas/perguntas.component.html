@@ -13,10 +13,10 @@
         <div class="p-col-12">        
           <div class="p-grid p-justify-center">
 
-            <h1 style="margin-top: 132px;">Você respondeu <strong>{{ tipoEncerramento }} vezes</strong> SIM</h1>
+            <h3 style="margin-top: 132px">Você respondeu <strong>{{ tipoEncerramento }} vezes</strong> SIM</h3>
 
-            <div class="p-col-12  p-md-6  p-lg-8  painel">
-              <h3>Resposta</h3>
+            <div class="p-col-12  p-md-6  p-lg-8  painel" style="padding: 0 20px;">
+              <h4>Resposta</h4>
               <p>Respondeu <strong>SIM</strong> quatro vezes ou mais? Em caso positivo,
                 é provável que você tenha problemas com o álcool. Porque dizemos isto?
                 Porque centenas de pessoas em A.A. dizem isto há muitos anos.
@@ -47,11 +47,13 @@
       <div class="p-col-12">
         <div class="p-grid p-justify-center">
          
-          <h1>Você respondeu <strong>{{ tipoEncerramento - 12}} vezes</strong> NÃO</h1>
+          <h3  style="margin-top: 132px;">Você respondeu <strong>{{ tipoEncerramento - 12}} vezes</strong> NÃO</h3>
           <div class="p-col-12  painel">
-            <h3>Resposta</h3>
+            <h4>Resposta</h4>
             <p>Volte para Home ou aperte o botão!</p>
-            <a type="button" pButton class="ui-button-danger"  href="https://www.google.com.br/" label="Clique aqui" ></a>
+            <a type="button" pButton class="ui-button-danger"  
+              href="https://www.google.com.br/" label="Clique aqui">
+            </a>
           </div>          
         </div>
       </div>
@@ -61,7 +63,6 @@
   </div>
 
 </div>
-
 
 <app-rodape></app-rodape>
 
